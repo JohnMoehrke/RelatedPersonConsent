@@ -21,7 +21,7 @@ Thus
 ### Relationship between RelatedPerson and Consent
 
 The RelatedPerson resource would be the way that most will document a relationship between a patient and a representative (e.g., guardian). It is a clear link between the Patient and the other person.  However the RelatedPerson does not have anywhere to explain the details of why the relationship exists, or any conditions on the relationship. There is a RelatedPerson.relationship that can be used to differentiate some roles, but this is very corse level.
-- RelatedPerson.relationship has a clear code for CHILD
+- RelatedPerson.relationship has a clear code for Father, Mother, etc
 
 It is not clear to me that the RelatedPerson needs to have some indication that there is a Consent explaining the rationale. One would determine this by searching for Consents that point at the RelatedPerson instance.  It is possible that the RelatedPerson.relationship could hold normal codes explaining the relationship, and one more that indicates that a rationale is available. Not clear that is proper or needed. It is also possible that there should be an element in RelatedPerson to point at the Consent, but I am not sure yet about that either.
 
@@ -42,12 +42,12 @@ The Consent then would need to be profiled. The main difference from the Consent
 
 - status - would indicate active
 - category - would indicate patient consent specifically a delegation of authority
-- subject - would indicate the Patient resource reference for the given patient
+- patient - would indicate the Patient resource reference for the given patient
 - dateTime - would indicate when the privacy policy was presented
-- grantor - would indicate who presented the privacy policy
-- grantee - would indicate the Patient resource if the patient was presented, a RelatedPerson for parent or guardian
-- controller - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy
-- policyText - would indicate the privacy policy that was presented. Usually, the url to the version specific policy
+- performer - would indicate the Patient resource if the patient was presented, a RelatedPerson for parent or guardian
+- organization - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy
+- source - would point at the specific signed consent by the patient
+- policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy
 - provision.type - permit - given there is no way to deny, this would be fixed at permit.
 - provision.agent.reference - would indicate the RelatedPerson resource
 
