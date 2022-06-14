@@ -1,5 +1,5 @@
 
-This IG focuses on a use-case where the existance of a representative is backed by a rational and agreement from the Patient. Specifically some cases:
+This IG focuses on a use-case where the existance of a representative (e.g. guardian) is backed by a rational and agreement from the Patient. Specifically some cases:
 1. When the Patient is a minor and the representative is a parent
 2. When an adult Patient is physically or mentally competent, but still wants to appoint a representative to manage his/her medical records (e.g., a Lawyer)
 3. When the Patient does not have competency to manage their medical records, thus some representative is assigned.
@@ -31,14 +31,21 @@ Thus for any given RelatedPerson, one can look for Consent.provision.actor.refer
 
 might be good to make sure the Consent is for that patient, and that the Consent is PERMITing that RelatedPerson... etc...
 
-This may seem cumbersome, so I was thinking that an extension in RelatedPerson that explicitly points at the Consent would be more appropriate. If we think this is needed, then we could put in a Change Request explaining the use-case and our solution. The committee might choose to add an element to R5 (RelatedPerson.authorization), might choose to add an extension to R5 (which can be used in R4), or might come up with some other solution.
-* TODO -- profile this extension here
+This may seem cumbersome, so I was thinking that an extension in RelatedPerson that explicitly points at the Consent would be more appropriate. 
+* [Extension for indicating a Consent justifies / authrizes](StructureDefinition-JFM-authorizingConsent.html)
+
+Thus in this IG [there is a minimal profile on RelatedPerson](StructureDefinition-AuthorizedRelatedPerson.html) that simply indicates taht this extension is needed.
+
+There are other rules, that might be possible to do with invariants, but I just itemize them:
+- The RelatedPerson.patient must be the same as the Consent.patient
+- The Consent.provision.agent.reference must be the same as the RelatedPerson.id
+- The Consent is authorizing (permit) the RelatedPerson, and is not expired.
 
 ### Consent profiling
 
 As with any Consent, often there is paperwork that ultimately holds the legal details. This legal paperwork is critical to overall legal precident, and represents the ceremony of the act of consent from the patient. These details should be captured by a DocumentReference and Binary. The Consent.sourceReference would then point at that DocumentReference. (Could use Consent.sourceAttachment, but I am not a fan of bloating the Consent with that detail).
 
-The Consent then would need to be profiled. The main difference from the Consents I outlined in my Consent article is that this might be a specific kind of Privacy Consent delegating authority, and the RelatedPerson instance would be indicated specifically in the .provision.agent.
+The Consent then would need to be profiled. The main difference from the FHIR core [Consent](http://hl7.org/fhir/consent.html) I outlined in my [Consent article](https://healthcaresecprivacy.blogspot.com/2022/05/explaining-fhir-consent-examples.html) is that this might be a specific kind of [Privacy Consent delegating authority](StructureDefinition-RelatedPersonConsent.html), and the RelatedPerson instance would be indicated specifically in the .provision.agent.
 
 - status - would indicate active
 - category - would indicate patient consent specifically a delegation of authority
@@ -50,11 +57,12 @@ The Consent then would need to be profiled. The main difference from the Consent
 - policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy
 - provision.type - permit - given there is no way to deny, this would be fixed at permit.
 - provision.agent.reference - would indicate the RelatedPerson resource
+- provision.agent.role - would indicate this agent is delegated authority
+- provision.purpose - would indicate some set of [authorized purposeOfUse](ValueSet-AuthPurposesVS.html)
 
+In the case where the courts or some actor that is not the Patient is compelling the RelatedPerson relationship, then the Consent.performer would indicate that the Patient is not the one granting the relationship, but rather the guardian or the courts.
 
-In the case where the courts or some actor that is not the Patient is compelling the RelatedPerson relationship, then the Consent.grantor and Consent.grantee. To indicate that the Patient is not the one granting the relationship, but rather the guardian or the courts.
-
-### using Consent to enable access control
+#### using Consent to enable access control
 
 One advantage of using a Consent resource as defined here, is that there would be a natural set of provisions in a Consent that would be processable by an Access Control engine that understands Consent. This Access Control engine would not need to understand RelatedPerson, other than to know that a given user is a RelatedPerson (vs Patient, Person, Practitioner, etc). Thus the Consent.permit rules are used to mediate acces to that Patient's data by that given user.
 
@@ -77,3 +85,8 @@ For example a use-case where the Patient nominates a potential Person to become 
 
 Note we have tried to keep workflow states out of the Consent.status; but some states have gotten in that I don't think are proper. But at this time we allow them in until there is a more formal task flow.
 
+### Examples
+
+- [Patient](Patient-ex-patient.html)
+- [Father as Related Person](RelatedPerson-ex-father.html)
+- [Consent from the Patient authorizing the Father as a Related Person](Consent-ex-consent.html)

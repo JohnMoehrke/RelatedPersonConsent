@@ -159,6 +159,8 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
 - policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy
 - provision.type - permit - given there is no way to deny, this would be fixed at permit.
 - provision.agent.reference - would indicate the RelatedPerson resource
+- provision.agent.role - would indicate this agent is delegated authority
+- provision.purpose - would indicate some set of authorized purposeOfUse
 """
 * modifierExtension 0..0
 * status = #active
