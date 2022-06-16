@@ -87,6 +87,13 @@ Note we have tried to keep workflow states out of the Consent.status; but some s
 
 ### Examples
 
+There is a basic example of a Patient delegating their father as their RelatedPerson.
+
+<div>
+{%include example.svg%}
+</div>
+<br clear="all">
+
 - [Patient](Patient-ex-patient.html)
 - [Father as Related Person](RelatedPerson-ex-father.html)
 - [Consent from the Patient authorizing the Father as a Related Person](Consent-ex-consent.html)

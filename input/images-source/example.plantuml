@@ -1,0 +1,32 @@
+@startuml
+object "ex-documentreference :\nDocumentReference" as docref
+object ": Binary" as doc
+docref --> doc : content.attachment.url
+doc : // Consent signed\nby the patient
+object "ex-patient : Patient" as pat
+pat : name = JJJ Schmidt
+pat : birthDate = 1923-07-25
+object "ex-son: RelatedPerson" as rel
+rel : name = JJJ Schmidt Jr
+rel --> pat : patient
+object "ex-consent: Consent" as consent
+
+consent : status = active
+consent : dateTime = 2022-06-13
+consent : scope = patient-privacy
+consent : category = [\n\tAuthorizing Consent for a Related Person\n\t\t(RelatedPersonAuthorizing),\n\tRelease of information consent\n\t\t(LOINC#64292-6),\n\tinformation disclosure\n\t\t(ActCode#IDSCL) ]
+consent -> pat : patient
+consent -> pat : performer
+consent <--[#blue,bold] rel : <font color=blue>**<<extension>>**</font>\n<font color=blue>**JFM-authorizingConsent**</font>
+consent -> docref : source[x]
+object ": provision" as prov
+consent *--> prov
+prov : type = permit
+prov : purpose = Family requested\n\t(FAMRQT)
+object ": actor" as provactor0
+prov *-d-> provactor0
+provactor0 -> rel : reference
+provactor0 : role = DELEGATEE
+
+
+@enduml
