@@ -2,9 +2,8 @@
 :patient: -> (Patient)
 (RelatedPerson) <- :guardian:
 
-
 (Consent) -> (Patient) : Consent.patient
 (Consent) -> (RelatedPerson) : Consent.agent.reference
 (Patient) <- (RelatedPerson) : RelatedPerson.patient
-(RelatedPerson) --* (Consent) : **extension**
+(RelatedPerson) --> (Consent) : **extension**
 @enduml
