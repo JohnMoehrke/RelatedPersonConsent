@@ -87,7 +87,7 @@ Note we have tried to keep workflow states out of the Consent.status; but some s
 
 ### Examples
 
-There is a basic example of a Patient delegating their father as their RelatedPerson.
+There is a basic example of a Patient delegating their father as their RelatedPerson. The resource objects are clickable to their examples.
 
 <div>
 {%include example.svg%}
