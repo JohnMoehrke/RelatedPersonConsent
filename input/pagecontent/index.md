@@ -31,15 +31,19 @@ Thus for any given RelatedPerson, one can look for Consent.provision.actor.refer
 
 might be good to make sure the Consent is for that patient, and that the Consent is PERMITing that RelatedPerson... etc...
 
+There are other rules that might be possible to do with invariants, but I just itemize them:
+- The RelatedPerson.patient must be the same as the Consent.patient
+- The Consent.provision.agent.reference must be the same as the RelatedPerson.id
+- The Consent is authorizing (permit) the RelatedPerson, and is not expired.
+
+#### Authorizing Consent Extension
+
 This may seem cumbersome, so I was thinking that an extension in RelatedPerson that explicitly points at the Consent would be more appropriate. 
 * [Extension for indicating a Consent justifies / authorizes](StructureDefinition-JFM-authorizingConsent.html)
 
 Thus in this IG [there is a minimal profile on RelatedPerson](StructureDefinition-AuthorizedRelatedPerson.html) that simply indicates that this extension is needed.
 
-There are other rules that might be possible to do with invariants, but I just itemize them:
-- The RelatedPerson.patient must be the same as the Consent.patient
-- The Consent.provision.agent.reference must be the same as the RelatedPerson.id
-- The Consent is authorizing (permit) the RelatedPerson, and is not expired.
+Note that this extension does make the creation of the Consent and RelatedPerson resources difficult as they both reference each-other. Thus from a purely REST perspective one needs to create the RelatedPerson resource, then create the Consent that points at the RelatedPerson, then UPDATE the RelatedPerson to add the extension that points back at the Consent. This kind of double pointers is discouraged in REST and in FHIR.
 
 ### Consent profiling
 
