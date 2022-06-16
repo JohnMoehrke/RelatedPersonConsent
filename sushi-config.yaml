@@ -10,8 +10,8 @@ description: This Implementation Guide addresses RelatePerson representative rat
 status: draft
 version: 0.1.0
 #fhirVersion: 4.3.0
-fhirVersion: 4.3.0-snapshot1
-#fhirVersion: 4.0.1
+#fhirVersion: 4.3.0-snapshot1
+fhirVersion: 4.0.1
 copyrightYear: 2022+
 releaseLabel: ci-build
 publisher:
