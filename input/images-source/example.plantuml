@@ -1,15 +1,15 @@
 @startuml
-object "ex-documentreference :\nDocumentReference" as docref
+object "ex-documentreference :\nDocumentReference" as docref [[DocumentReference-ex-documentreference.html]]
 object ": Binary" as doc
 docref --> doc : content.attachment.url
 doc : // Consent signed\nby the patient
-object "ex-patient : Patient" as pat
+object "ex-patient : Patient" as pat [[Patient-ex-patient.html]]
 pat : name = JJJ Schmidt
 pat : birthDate = 1923-07-25
-object "ex-son: RelatedPerson" as rel
+object "ex-son: RelatedPerson" as rel [[RelatedPerson-ex-father.html]]
 rel : name = JJJ Schmidt Jr
 rel --> pat : patient
-object "ex-consent: Consent" as consent
+object "ex-consent: Consent" as consent [[Consent-ex-consent.html]]
 
 consent : status = active
 consent : dateTime = 2022-06-13
