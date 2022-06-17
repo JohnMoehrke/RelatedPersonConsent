@@ -6,7 +6,7 @@ id: johnmoehrke.relatedpersonconsent.example
 canonical: http://johnmoehrke.github.io/RelatedPersonConsent
 name: JohnMoehrkeRelatedPersonConsent
 title: "JohnMoehrke RelatedPerson Consent"
-description: This Implementation Guide addresses RelatePerson representative rational and authorization using a Consent resource.
+description: This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource.
 status: draft
 version: 0.1.0
 fhirVersion: 4.3.0

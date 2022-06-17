@@ -1,0 +1,102 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<Bundle xmlns="http://hl7.org/fhir">
+  <id value="38775957-002e-4e7b-9db4-55f35d427809"/>
+  <meta>
+    <lastUpdated value="2022-06-17T07:29:17.241-05:00"/>
+  </meta>
+  <type value="collection"/>
+  <entry>
+    <fullUrl value="http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS"/>
+    <resource>
+      <ValueSet>
+        <id value="AuthPurposesVS"/>
+        <text>
+          <status value="generated"/>
+          <div xmlns="http://www.w3.org/1999/xhtml">
+            <p>This value set contains 1 concepts</p>
+            <p style="border: black 1px dotted; background-color: #EEEEEE; padding: 8px; margin-bottom: 8px">Expansion based on 
+              <a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html">ActReason v2.1.0 (CodeSystem)</a>
+            </p>
+            <p>All codes in this table are from the system 
+              <a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html">
+                <code>http://terminology.hl7.org/CodeSystem/v3-ActReason</code>
+              </a>
+            </p>
+            <table class="codes">
+              <tr>
+                <td style="white-space:nowrap">
+                  <b>Code</b>
+                </td>
+                <td>
+                  <b>Display</b>
+                </td>
+                <td>
+                  <b>Definition</b>
+                </td>
+              </tr>
+              <tr>
+                <td style="white-space:nowrap">
+                  <a name="http---terminology.hl7.org-CodeSystem-v3-ActReason-FAMRQT"> </a>  
+                  <a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-FAMRQT">FAMRQT</a>
+                </td>
+                <td>family requested</td>
+                <td>To perform one or more operations on information in response to a request by a family member authorized by the patient.</td>
+              </tr>
+            </table>
+          </div>
+        </text>
+        <url value="http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS"/>
+        <version value="0.1.0"/>
+        <name value="AuthPurposesVS"/>
+        <title value="Authorization purposes for delegation access valueset"/>
+        <status value="active"/>
+        <date value="2022-06-17T07:29:17-05:00"/>
+        <publisher value="John Moehrke (himself)"/>
+        <contact>
+          <name value="John Moehrke (himself)"/>
+          <telecom>
+            <system value="url"/>
+            <value value="http://healthcaresecprivacy.blogspot.com"/>
+          </telecom>
+          <telecom>
+            <system value="email"/>
+            <value value="JohnMoehrke@gmail.com"/>
+          </telecom>
+        </contact>
+        <contact>
+          <name value="John Moehrke (himself)"/>
+          <telecom>
+            <system value="email"/>
+            <value value="JohnMoehrke@gmail.com"/>
+          </telecom>
+        </contact>
+        <description value="ValueSet of the Authorized purposesOfUse types"/>
+        <jurisdiction>
+          <coding>
+            <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+            <code value="001"/>
+          </coding>
+        </jurisdiction>
+        <expansion>
+          <identifier value="urn:uuid:01c5fbae-0661-4ef2-b7ad-8a7e6e34a852"/>
+          <timestamp value="2022-06-17T07:29:34-05:00"/>
+          <total value="1"/>
+          <parameter>
+            <name value="excludeNested"/>
+            <valueBoolean value="false"/>
+          </parameter>
+          <parameter>
+            <name value="version"/>
+            <valueUri value="http://terminology.hl7.org/CodeSystem/v3-ActReason|2.1.0"/>
+          </parameter>
+          <contains>
+            <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
+            <code value="FAMRQT"/>
+            <display value="family requested"/>
+          </contains>
+        </expansion>
+      </ValueSet>
+    </resource>
+  </entry>
+</Bundle>

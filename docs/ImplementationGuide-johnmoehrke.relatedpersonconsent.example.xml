@@ -1,0 +1,346 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<ImplementationGuide xmlns="http://hl7.org/fhir">
+  <id value="johnmoehrke.relatedpersonconsent.example"/>
+  <text>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><h2>JohnMoehrkeRelatedPersonConsent</h2><p>The official URL for this implementation guide is: </p><pre>http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example</pre><div><p>This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource.</p>
+</div></div>
+  </text>
+  <url value="http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example"/>
+  <version value="0.1.0"/>
+  <name value="JohnMoehrkeRelatedPersonConsent"/>
+  <title value="JohnMoehrke RelatedPerson Consent"/>
+  <status value="draft"/>
+  <date value="2022-06-17T07:29:17-05:00"/>
+  <publisher value="John Moehrke (himself)"/>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://healthcaresecprivacy.blogspot.com"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <description value="This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource."/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <packageId value="johnmoehrke.relatedpersonconsent.example"/>
+  <license value="CC-BY-4.0"/>
+  <fhirVersion value="4.3.0"/>
+  <dependsOn id="hl7tx">
+    <uri value="http://terminology.hl7.org/ImplementationGuide/hl7.terminology"/>
+    <packageId value="hl7.terminology.r4"/>
+    <version value="3.1.0"/>
+  </dependsOn>
+  <definition>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/AuthorizedRelatedPerson"/>
+      </reference>
+      <name value="Authorized RelatedPerson"/>
+      <description value="A RelatedPerson that has been justified and authorized by the Patient.&#xA;&#xA;- The RelatedPerson.patient must be the same as the Consent.patient&#xA;- The Consent.provision.agent.reference must be the same as the RelatedPerson.id&#xA;- The Consent is authorizing (permit) the RelatedPerson, and is not expired."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:resource"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/RelatedPersonConsent"/>
+      </reference>
+      <name value="Consent profile for a RelatedPerson relationship"/>
+      <description value="This defines the constraints on a Consent to indicate that a Patient has agreed and authorizes a Related Person.&#xA;&#xA;- status - would indicate active&#xA;- category - would indicate patient consent specifically a delegation of authority&#xA;- patient - would indicate the Patient resource reference for the given patient&#xA;- dateTime - would indicate when the privacy policy was presented&#xA;- performer - would indicate the Patient resource if the patient was presented, a RelatedPerson for parent or guardian&#xA;- organization - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy&#xA;- source - would point at the specific signed consent by the patient&#xA;- policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy&#xA;- provision.type - permit - given there is no way to deny, this would be fixed at permit.&#xA;- provision.agent.reference - would indicate the RelatedPerson resource&#xA;- provision.agent.role - would indicate this agent is delegated authority&#xA;- provision.purpose - would indicate some set of authorized purposeOfUse"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="StructureDefinition:extension"/>
+      </extension>
+      <reference>
+        <reference value="StructureDefinition/JFM-authorizingConsent"/>
+      </reference>
+      <name value="Extension that points at an authorizing Consent"/>
+      <description value="Used within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist."/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="ValueSet"/>
+      </extension>
+      <reference>
+        <reference value="ValueSet/AuthPurposesVS"/>
+      </reference>
+      <name value="Authorization purposes for delegation access valueset"/>
+      <description value="ValueSet of the Authorized purposesOfUse types"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="CodeSystem"/>
+      </extension>
+      <reference>
+        <reference value="CodeSystem/AuthorizedCodes"/>
+      </reference>
+      <name value="Consent type that is authorizing a RelatedPerson"/>
+      <description value="CodeSystem for authorizing Consent types for a RelatedPerson"/>
+      <exampleBoolean value="false"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Consent"/>
+      </extension>
+      <reference>
+        <reference value="Consent/ex-consent"/>
+      </reference>
+      <name value="Simple Consent example"/>
+      <description value="Consent justifying RelatedPerson and authorizing access by that RelatedPerson"/>
+      <exampleCanonical value="http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Practitioner"/>
+      </extension>
+      <reference>
+        <reference value="Practitioner/ex-doctor"/>
+      </reference>
+      <name value="Practitioner example doctor"/>
+      <description value="Practitioner example for the doctor."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="DocumentReference"/>
+      </extension>
+      <reference>
+        <reference value="DocumentReference/ex-documentreference"/>
+      </reference>
+      <name value="DocumentReference Consent Paperwork example"/>
+      <description value="DocumentReference example of the paperwork of the Consent"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="RelatedPerson"/>
+      </extension>
+      <reference>
+        <reference value="RelatedPerson/ex-father"/>
+      </reference>
+      <name value="Father - Related Person"/>
+      <description value="Related Father of the Patient authorized by a Consent"/>
+      <exampleCanonical value="http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Organization"/>
+      </extension>
+      <reference>
+        <reference value="Organization/ex-organization"/>
+      </reference>
+      <name value="Example Organization holding the data"/>
+      <description value="The Organization that holds the data, and enforcing any Consents"/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <resource>
+      <extension url="http://hl7.org/fhir/tools/StructureDefinition/resource-information">
+        <valueString value="Patient"/>
+      </extension>
+      <reference>
+        <reference value="Patient/ex-patient"/>
+      </reference>
+      <name value="Patient example"/>
+      <description value="Patient example for completeness sake."/>
+      <exampleBoolean value="true"/>
+    </resource>
+    <page>
+      <nameUrl value="toc.html"/>
+      <title value="Table of Contents"/>
+      <generation value="html"/>
+      <page>
+        <nameUrl value="index.html"/>
+        <title value="RelatedPerson Consent"/>
+        <generation value="markdown"/>
+      </page>
+    </page>
+    <parameter>
+      <code value="copyrightyear"/>
+      <value value="2022+"/>
+    </parameter>
+    <parameter>
+      <code value="releaselabel"/>
+      <value value="ci-build"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="fsh-generated/resources"/>
+    </parameter>
+    <parameter>
+      <code value="show-inherited-invariants"/>
+      <value value="false"/>
+    </parameter>
+    <parameter>
+      <code value="usage-stats-opt-out"/>
+      <value value="false"/>
+    </parameter>
+    <parameter>
+      <code value="logging"/>
+      <value value="progress"/>
+    </parameter>
+    <parameter>
+      <code value="shownav"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="active-tables"/>
+      <value value="false"/>
+    </parameter>
+    <parameter>
+      <code value="apply-contact"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="apply-jurisdiction"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="apply-publisher"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="apply-version"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="autoload-resources"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/capabilities"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/examples"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/extensions"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/models"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/operations"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/profiles"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/resources"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/vocabulary"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/testing"/>
+    </parameter>
+    <parameter>
+      <code value="path-resource"/>
+      <value value="input/history"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="template/config"/>
+    </parameter>
+    <parameter>
+      <code value="path-pages"/>
+      <value value="input/images"/>
+    </parameter>
+    <parameter>
+      <code value="path-liquid"/>
+      <value value="template/liquid"/>
+    </parameter>
+    <parameter>
+      <code value="path-liquid"/>
+      <value value="input/liquid"/>
+    </parameter>
+    <parameter>
+      <code value="path-qa"/>
+      <value value="temp/qa"/>
+    </parameter>
+    <parameter>
+      <code value="path-temp"/>
+      <value value="temp/pages"/>
+    </parameter>
+    <parameter>
+      <code value="path-output"/>
+      <value value="output"/>
+    </parameter>
+    <parameter>
+      <code value="path-tx-cache"/>
+      <value value="input-cache/txcache"/>
+    </parameter>
+    <parameter>
+      <code value="path-suppressed-warnings"/>
+      <value value="input/ignoreWarnings.txt"/>
+    </parameter>
+    <parameter>
+      <code value="path-history"/>
+      <value value="http://johnmoehrke.github.io/RelatedPersonConsent/history.html"/>
+    </parameter>
+    <parameter>
+      <code value="template-html"/>
+      <value value="template-page.html"/>
+    </parameter>
+    <parameter>
+      <code value="template-md"/>
+      <value value="template-page-md.html"/>
+    </parameter>
+    <parameter>
+      <code value="apply-context"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="apply-copyright"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="apply-license"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="fmm-definition"/>
+      <value value="http://hl7.org/fhir/versions.html#maturity"/>
+    </parameter>
+    <parameter>
+      <code value="propagate-status"/>
+      <value value="true"/>
+    </parameter>
+    <parameter>
+      <code value="excludelogbinaryformat"/>
+      <value value="true"/>
+    </parameter>
+  </definition>
+</ImplementationGuide>

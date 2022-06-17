@@ -1,0 +1,414 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example> a fhir:ImplementationGuide;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "johnmoehrke.relatedpersonconsent.example"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>JohnMoehrkeRelatedPersonConsent</h2><p>The official URL for this implementation guide is: </p><pre>http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example</pre><div><p>This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource.</p>\n</div></div>"
+  ];
+  fhir:ImplementationGuide.url [ fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example"];
+  fhir:ImplementationGuide.version [ fhir:value "0.1.0"];
+  fhir:ImplementationGuide.name [ fhir:value "JohnMoehrkeRelatedPersonConsent"];
+  fhir:ImplementationGuide.title [ fhir:value "JohnMoehrke RelatedPerson Consent"];
+  fhir:ImplementationGuide.status [ fhir:value "draft"];
+  fhir:ImplementationGuide.date [ fhir:value "2022-06-17T07:29:17-05:00"^^xsd:dateTime];
+  fhir:ImplementationGuide.publisher [ fhir:value "John Moehrke (himself)"];
+  fhir:ImplementationGuide.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "John Moehrke (himself)" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://healthcaresecprivacy.blogspot.com" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "John Moehrke (himself)" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
+     ]
+  ];
+  fhir:ImplementationGuide.description [ fhir:value "This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource."];
+  fhir:ImplementationGuide.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:ImplementationGuide.packageId [ fhir:value "johnmoehrke.relatedpersonconsent.example"];
+  fhir:ImplementationGuide.license [ fhir:value "CC-BY-4.0"];
+  fhir:ImplementationGuide.fhirVersion [
+     fhir:value "4.3.0";
+     fhir:index 0
+  ];
+  fhir:ImplementationGuide.dependsOn [
+     fhir:index 0;
+     fhir:Element.id [ fhir:value "hl7tx" ];
+     fhir:ImplementationGuide.dependsOn.uri [
+       fhir:value "http://terminology.hl7.org/ImplementationGuide/hl7.terminology";
+       fhir:link <http://terminology.hl7.org/ImplementationGuide/hl7.terminology>
+     ];
+     fhir:ImplementationGuide.dependsOn.packageId [ fhir:value "hl7.terminology.r4" ];
+     fhir:ImplementationGuide.dependsOn.version [ fhir:value "3.1.0" ]
+  ];
+  fhir:ImplementationGuide.definition [
+     fhir:ImplementationGuide.definition.resource [
+       fhir:index 0;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/AuthorizedRelatedPerson" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Authorized RelatedPerson" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "A RelatedPerson that has been justified and authorized by the Patient.\n\n- The RelatedPerson.patient must be the same as the Consent.patient\n- The Consent.provision.agent.reference must be the same as the RelatedPerson.id\n- The Consent is authorizing (permit) the RelatedPerson, and is not expired." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 1;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:resource" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/RelatedPersonConsent" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Consent profile for a RelatedPerson relationship" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "This defines the constraints on a Consent to indicate that a Patient has agreed and authorizes a Related Person.\n\n- status - would indicate active\n- category - would indicate patient consent specifically a delegation of authority\n- patient - would indicate the Patient resource reference for the given patient\n- dateTime - would indicate when the privacy policy was presented\n- performer - would indicate the Patient resource if the patient was presented, a RelatedPerson for parent or guardian\n- organization - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy\n- source - would point at the specific signed consent by the patient\n- policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy\n- provision.type - permit - given there is no way to deny, this would be fixed at permit.\n- provision.agent.reference - would indicate the RelatedPerson resource\n- provision.agent.role - would indicate this agent is delegated authority\n- provision.purpose - would indicate some set of authorized purposeOfUse" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 2;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "StructureDefinition:extension" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsent>;
+         fhir:Reference.reference [ fhir:value "StructureDefinition/JFM-authorizingConsent" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Extension that points at an authorizing Consent" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Used within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 3;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "ValueSet" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS>;
+         fhir:Reference.reference [ fhir:value "ValueSet/AuthPurposesVS" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Authorization purposes for delegation access valueset" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "ValueSet of the Authorized purposesOfUse types" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 4;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "CodeSystem" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes>;
+         fhir:Reference.reference [ fhir:value "CodeSystem/AuthorizedCodes" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Consent type that is authorizing a RelatedPerson" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "CodeSystem for authorizing Consent types for a RelatedPerson" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "false"^^xsd:boolean ]
+     ], [
+       fhir:index 5;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Consent" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Consent/ex-consent>;
+         fhir:Reference.reference [ fhir:value "Consent/ex-consent" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Simple Consent example" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Consent justifying RelatedPerson and authorizing access by that RelatedPerson" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent";
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent>
+       ]
+     ], [
+       fhir:index 6;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Practitioner" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Practitioner/ex-doctor>;
+         fhir:Reference.reference [ fhir:value "Practitioner/ex-doctor" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Practitioner example doctor" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Practitioner example for the doctor." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 7;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "DocumentReference" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/DocumentReference/ex-documentreference>;
+         fhir:Reference.reference [ fhir:value "DocumentReference/ex-documentreference" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "DocumentReference Consent Paperwork example" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "DocumentReference example of the paperwork of the Consent" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 8;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "RelatedPerson" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/RelatedPerson/ex-father>;
+         fhir:Reference.reference [ fhir:value "RelatedPerson/ex-father" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Father - Related Person" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Related Father of the Patient authorized by a Consent" ];
+       fhir:ImplementationGuide.definition.resource.exampleCanonical [
+         fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson";
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson>
+       ]
+     ], [
+       fhir:index 9;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Organization" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Organization/ex-organization>;
+         fhir:Reference.reference [ fhir:value "Organization/ex-organization" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Example Organization holding the data" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "The Organization that holds the data, and enforcing any Consents" ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ], [
+       fhir:index 10;
+       fhir:Element.extension [
+         fhir:index 0;
+         fhir:Extension.url [ fhir:value "http://hl7.org/fhir/tools/StructureDefinition/resource-information" ];
+         fhir:Extension.valueString [ fhir:value "Patient" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Patient/ex-patient>;
+         fhir:Reference.reference [ fhir:value "Patient/ex-patient" ]
+       ];
+       fhir:ImplementationGuide.definition.resource.name [ fhir:value "Patient example" ];
+       fhir:ImplementationGuide.definition.resource.description [ fhir:value "Patient example for completeness sake." ];
+       fhir:ImplementationGuide.definition.resource.exampleBoolean [ fhir:value "true"^^xsd:boolean ]
+     ];
+     fhir:ImplementationGuide.definition.page [
+       fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "toc.html" ];
+       fhir:ImplementationGuide.definition.page.title [ fhir:value "Table of Contents" ];
+       fhir:ImplementationGuide.definition.page.generation [ fhir:value "html" ];
+       fhir:ImplementationGuide.definition.page.page [
+         fhir:index 0;
+         fhir:ImplementationGuide.definition.page.nameUrl [ fhir:value "index.html" ];
+         fhir:ImplementationGuide.definition.page.title [ fhir:value "RelatedPerson Consent" ];
+         fhir:ImplementationGuide.definition.page.generation [ fhir:value "markdown" ]
+       ]
+     ];
+     fhir:ImplementationGuide.definition.parameter [
+       fhir:index 0;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "copyrightyear" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "2022+" ]
+     ], [
+       fhir:index 1;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "releaselabel" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "ci-build" ]
+     ], [
+       fhir:index 2;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "fsh-generated/resources" ]
+     ], [
+       fhir:index 3;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "show-inherited-invariants" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "false" ]
+     ], [
+       fhir:index 4;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "usage-stats-opt-out" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "false" ]
+     ], [
+       fhir:index 5;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "logging" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "progress" ]
+     ], [
+       fhir:index 6;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "shownav" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 7;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "active-tables" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "false" ]
+     ], [
+       fhir:index 8;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply-contact" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 9;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply-jurisdiction" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 10;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply-publisher" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 11;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply-version" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 12;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "autoload-resources" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 13;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/capabilities" ]
+     ], [
+       fhir:index 14;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/examples" ]
+     ], [
+       fhir:index 15;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/extensions" ]
+     ], [
+       fhir:index 16;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/models" ]
+     ], [
+       fhir:index 17;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/operations" ]
+     ], [
+       fhir:index 18;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/profiles" ]
+     ], [
+       fhir:index 19;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/resources" ]
+     ], [
+       fhir:index 20;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/vocabulary" ]
+     ], [
+       fhir:index 21;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/testing" ]
+     ], [
+       fhir:index 22;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-resource" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/history" ]
+     ], [
+       fhir:index 23;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template/config" ]
+     ], [
+       fhir:index 24;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-pages" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/images" ]
+     ], [
+       fhir:index 25;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-liquid" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template/liquid" ]
+     ], [
+       fhir:index 26;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-liquid" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/liquid" ]
+     ], [
+       fhir:index 27;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-qa" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "temp/qa" ]
+     ], [
+       fhir:index 28;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-temp" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "temp/pages" ]
+     ], [
+       fhir:index 29;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-output" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "output" ]
+     ], [
+       fhir:index 30;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-tx-cache" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input-cache/txcache" ]
+     ], [
+       fhir:index 31;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-suppressed-warnings" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "input/ignoreWarnings.txt" ]
+     ], [
+       fhir:index 32;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "path-history" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/history.html" ]
+     ], [
+       fhir:index 33;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "template-html" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template-page.html" ]
+     ], [
+       fhir:index 34;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "template-md" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "template-page-md.html" ]
+     ], [
+       fhir:index 35;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply-context" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 36;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply-copyright" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 37;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "apply-license" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 38;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "fmm-definition" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "http://hl7.org/fhir/versions.html#maturity" ]
+     ], [
+       fhir:index 39;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "propagate-status" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ], [
+       fhir:index 40;
+       fhir:ImplementationGuide.definition.parameter.code [ fhir:value "excludelogbinaryformat" ];
+       fhir:ImplementationGuide.definition.parameter.value [ fhir:value "true" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

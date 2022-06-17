@@ -1,0 +1,47 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<CodeSystem xmlns="http://hl7.org/fhir">
+  <id value="AuthorizedCodes"/>
+  <text>
+    <status value="generated"/><div xmlns="http://www.w3.org/1999/xhtml"><p>This code system http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes defines the following codes:</p><table class="codes"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style="white-space:nowrap">RelatedPersonAuthorizing<a name="AuthorizedCodes-RelatedPersonAuthorizing"> </a></td><td>Authorizing Consent for a Related Person</td></tr></table></div>
+  </text>
+  <url value="http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes"/>
+  <version value="0.1.0"/>
+  <name value="AuthorizedCodes"/>
+  <title value="Consent type that is authorizing a RelatedPerson"/>
+  <status value="active"/>
+  <date value="2022-06-17T07:29:17-05:00"/>
+  <publisher value="John Moehrke (himself)"/>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="url"/>
+      <value value="http://healthcaresecprivacy.blogspot.com"/>
+    </telecom>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <contact>
+    <name value="John Moehrke (himself)"/>
+    <telecom>
+      <system value="email"/>
+      <value value="JohnMoehrke@gmail.com"/>
+    </telecom>
+  </contact>
+  <description value="CodeSystem for authorizing Consent types for a RelatedPerson"/>
+  <jurisdiction>
+    <coding>
+      <system value="http://unstats.un.org/unsd/methods/m49/m49.htm"/>
+      <code value="001"/>
+    </coding>
+  </jurisdiction>
+  <caseSensitive value="true"/>
+  <content value="complete"/>
+  <count value="1"/>
+  <concept>
+    <code value="RelatedPersonAuthorizing"/>
+    <display value="Authorizing Consent for a Related Person"/>
+  </concept>
+</CodeSystem>

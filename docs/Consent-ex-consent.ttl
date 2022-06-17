@@ -1,0 +1,112 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix loinc: <http://loinc.org/rdf#> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/Consent/ex-consent> a fhir:Consent;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "ex-consent"];
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent";
+       fhir:index 0;
+       fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent>
+     ];
+     fhir:Meta.security [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
+       fhir:Coding.code [ fhir:value "HTEST" ]
+     ]
+  ];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p><b>Generated Narrative</b></p><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\">Resource \"ex-consent\" </p><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-RelatedPersonConsent.html\">Consent profile for a RelatedPerson relationship</a></p><p style=\"margin-bottom: 0px\">Security Labels: <span title=\"{http://terminology.hl7.org/CodeSystem/v3-ActReason http://terminology.hl7.org/CodeSystem/v3-ActReason}\">http://terminology.hl7.org/CodeSystem/v3-ActReason</span></p></div><p><b>status</b>: active</p><p><b>scope</b>: Privacy Consent <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://hl7.org/fhir/4.3.0-snapshot1/codesystem-consent-scope.html\">Consent Scope Codes</a>#patient-privacy)</span></p><p><b>category</b>: Authorizing Consent for a Related Person <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"CodeSystem-AuthorizedCodes.html\">Consent type that is authorizing a RelatedPerson</a>#RelatedPersonAuthorizing)</span>, Release of information consent <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"https://loinc.org/\">LOINC</a>#64292-6)</span>, information disclosure <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActCode.html\">ActCode</a>#IDSCL)</span></p><p><b>patient</b>: <a href=\"Patient-ex-patient.html\">Patient/ex-patient</a> \" SCHMIDT\"</p><p><b>dateTime</b>: 2022-06-13</p><p><b>performer</b>: <a href=\"Patient-ex-patient.html\">Patient/ex-patient</a> \" SCHMIDT\"</p><p><b>organization</b>: <a href=\"Organization-ex-organization.html\">Organization/ex-organization</a> \"somewhere org\"</p><p><b>source</b>: <a href=\"DocumentReference-ex-documentreference.html\">DocumentReference/ex-documentreference</a></p><h3>Policies</h3><table class=\"grid\"><tr><td>-</td><td><b>Uri</b></td></tr><tr><td>*</td><td><a href=\"http://example.org/policies/representative.xacml\">http://example.org/policies/representative.xacml</a></td></tr></table><blockquote><p><b>provision</b></p><p><b>type</b>: permit</p><h3>Actors</h3><table class=\"grid\"><tr><td>-</td><td><b>Role</b></td><td><b>Reference</b></td></tr><tr><td>*</td><td>delegatee <span style=\"background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki\"> (<a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-RoleCode.html\">RoleCode</a>#DELEGATEE)</span></td><td><a href=\"RelatedPerson-ex-father.html\">RelatedPerson/ex-father</a> \" SCHMIDT\"</td></tr></table><p><b>purpose</b>: family requested (Details: http://terminology.hl7.org/CodeSystem/v3-ActReason code FAMRQT = 'family requested', stated as 'null')</p></blockquote></div>"
+  ];
+  fhir:Consent.status [ fhir:value "active"];
+  fhir:Consent.scope [
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/consentscope" ];
+       fhir:Coding.code [ fhir:value "patient-privacy" ]
+     ]
+  ];
+  fhir:Consent.category [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes" ];
+       fhir:Coding.code [ fhir:value "RelatedPersonAuthorizing" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       a loinc:64292-6;
+       fhir:Coding.system [ fhir:value "http://loinc.org" ];
+       fhir:Coding.code [ fhir:value "64292-6" ];
+       fhir:Coding.display [ fhir:value "Release of information consent" ]
+     ]
+  ], [
+     fhir:index 2;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActCode" ];
+       fhir:Coding.code [ fhir:value "IDSCL" ]
+     ]
+  ];
+  fhir:Consent.patient [
+     fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Patient/ex-patient>;
+     fhir:Reference.reference [ fhir:value "Patient/ex-patient" ]
+  ];
+  fhir:Consent.dateTime [ fhir:value "2022-06-13"^^xsd:date];
+  fhir:Consent.performer [
+     fhir:index 0;
+     fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Patient/ex-patient>;
+     fhir:Reference.reference [ fhir:value "Patient/ex-patient" ]
+  ];
+  fhir:Consent.organization [
+     fhir:index 0;
+     fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Organization/ex-organization>;
+     fhir:Reference.reference [ fhir:value "Organization/ex-organization" ]
+  ];
+  fhir:Consent.sourceReference [
+     fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/DocumentReference/ex-documentreference>;
+     fhir:Reference.reference [ fhir:value "DocumentReference/ex-documentreference" ]
+  ];
+  fhir:Consent.policy [
+     fhir:index 0;
+     fhir:Consent.policy.uri [ fhir:value "http://example.org/policies/representative.xacml" ]
+  ];
+  fhir:Consent.provision [
+     fhir:Consent.provision.type [ fhir:value "permit" ];
+     fhir:Consent.provision.actor [
+       fhir:index 0;
+       fhir:Consent.provision.actor.role [
+         fhir:CodeableConcept.coding [
+           fhir:index 0;
+           fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ];
+           fhir:Coding.code [ fhir:value "DELEGATEE" ]
+         ]
+       ];
+       fhir:Consent.provision.actor.reference [
+         fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/RelatedPerson/ex-father>;
+         fhir:Reference.reference [ fhir:value "RelatedPerson/ex-father" ]
+       ]
+     ];
+     fhir:Consent.provision.purpose [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ];
+       fhir:Coding.code [ fhir:value "FAMRQT" ]
+     ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/Consent/ex-consent.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

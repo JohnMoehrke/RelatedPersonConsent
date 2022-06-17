@@ -1,0 +1,67 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes> a fhir:CodeSystem;
+  fhir:nodeRole fhir:treeRoot;
+  fhir:Resource.id [ fhir:value "AuthorizedCodes"];
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "generated" ];
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">RelatedPersonAuthorizing<a name=\"AuthorizedCodes-RelatedPersonAuthorizing\"> </a></td><td>Authorizing Consent for a Related Person</td></tr></table></div>"
+  ];
+  fhir:CodeSystem.url [ fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes"];
+  fhir:CodeSystem.version [ fhir:value "0.1.0"];
+  fhir:CodeSystem.name [ fhir:value "AuthorizedCodes"];
+  fhir:CodeSystem.title [ fhir:value "Consent type that is authorizing a RelatedPerson"];
+  fhir:CodeSystem.status [ fhir:value "active"];
+  fhir:CodeSystem.date [ fhir:value "2022-06-17T07:29:17-05:00"^^xsd:dateTime];
+  fhir:CodeSystem.publisher [ fhir:value "John Moehrke (himself)"];
+  fhir:CodeSystem.contact [
+     fhir:index 0;
+     fhir:ContactDetail.name [ fhir:value "John Moehrke (himself)" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "url" ];
+       fhir:ContactPoint.value [ fhir:value "http://healthcaresecprivacy.blogspot.com" ]
+     ], [
+       fhir:index 1;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
+     ]
+  ], [
+     fhir:index 1;
+     fhir:ContactDetail.name [ fhir:value "John Moehrke (himself)" ];
+     fhir:ContactDetail.telecom [
+       fhir:index 0;
+       fhir:ContactPoint.system [ fhir:value "email" ];
+       fhir:ContactPoint.value [ fhir:value "JohnMoehrke@gmail.com" ]
+     ]
+  ];
+  fhir:CodeSystem.description [ fhir:value "CodeSystem for authorizing Consent types for a RelatedPerson"];
+  fhir:CodeSystem.jurisdiction [
+     fhir:index 0;
+     fhir:CodeableConcept.coding [
+       fhir:index 0;
+       fhir:Coding.system [ fhir:value "http://unstats.un.org/unsd/methods/m49/m49.htm" ];
+       fhir:Coding.code [ fhir:value "001" ]
+     ]
+  ];
+  fhir:CodeSystem.caseSensitive [ fhir:value "true"^^xsd:boolean];
+  fhir:CodeSystem.content [ fhir:value "complete"];
+  fhir:CodeSystem.count [ fhir:value "1"^^xsd:nonNegativeInteger];
+  fhir:CodeSystem.concept [
+     fhir:index 0;
+     fhir:CodeSystem.concept.code [ fhir:value "RelatedPersonAuthorizing" ];
+     fhir:CodeSystem.concept.display [ fhir:value "Authorizing Consent for a Related Person" ]
+  ] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes.ttl> a owl:Ontology;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

@@ -1,0 +1,59 @@
+{
+  "resourceType": "CodeSystem",
+  "id": "AuthorizedCodes",
+  "text": {
+    "status": "generated",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p>This code system http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes defines the following codes:</p><table class=\"codes\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td></tr><tr><td style=\"white-space:nowrap\">RelatedPersonAuthorizing<a name=\"AuthorizedCodes-RelatedPersonAuthorizing\"> </a></td><td>Authorizing Consent for a Related Person</td></tr></table></div>"
+  },
+  "url": "http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes",
+  "version": "0.1.0",
+  "name": "AuthorizedCodes",
+  "title": "Consent type that is authorizing a RelatedPerson",
+  "status": "active",
+  "date": "2022-06-17T07:29:17-05:00",
+  "publisher": "John Moehrke (himself)",
+  "contact": [
+    {
+      "name": "John Moehrke (himself)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://healthcaresecprivacy.blogspot.com"
+        },
+        {
+          "system": "email",
+          "value": "JohnMoehrke@gmail.com"
+        }
+      ]
+    },
+    {
+      "name": "John Moehrke (himself)",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "JohnMoehrke@gmail.com"
+        }
+      ]
+    }
+  ],
+  "description": "CodeSystem for authorizing Consent types for a RelatedPerson",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "caseSensitive": true,
+  "content": "complete",
+  "count": 1,
+  "concept": [
+    {
+      "code": "RelatedPersonAuthorizing",
+      "display": "Authorizing Consent for a Related Person"
+    }
+  ]
+}

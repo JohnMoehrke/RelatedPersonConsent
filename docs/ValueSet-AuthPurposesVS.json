@@ -1,0 +1,62 @@
+{
+  "resourceType": "ValueSet",
+  "id": "AuthPurposesVS",
+  "text": {
+    "status": "extensions",
+    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><ul><li>Include these codes as defined in <a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html\"><code>http://terminology.hl7.org/CodeSystem/v3-ActReason</code></a><table class=\"none\"><tr><td style=\"white-space:nowrap\"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href=\"http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-FAMRQT\">FAMRQT</a></td><td>family requested</td><td>To perform one or more operations on information in response to a request by a family member authorized by the patient.</td></tr></table></li></ul></div>"
+  },
+  "url": "http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS",
+  "version": "0.1.0",
+  "name": "AuthPurposesVS",
+  "title": "Authorization purposes for delegation access valueset",
+  "status": "active",
+  "date": "2022-06-17T07:29:17-05:00",
+  "publisher": "John Moehrke (himself)",
+  "contact": [
+    {
+      "name": "John Moehrke (himself)",
+      "telecom": [
+        {
+          "system": "url",
+          "value": "http://healthcaresecprivacy.blogspot.com"
+        },
+        {
+          "system": "email",
+          "value": "JohnMoehrke@gmail.com"
+        }
+      ]
+    },
+    {
+      "name": "John Moehrke (himself)",
+      "telecom": [
+        {
+          "system": "email",
+          "value": "JohnMoehrke@gmail.com"
+        }
+      ]
+    }
+  ],
+  "description": "ValueSet of the Authorized purposesOfUse types",
+  "jurisdiction": [
+    {
+      "coding": [
+        {
+          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
+          "code": "001"
+        }
+      ]
+    }
+  ],
+  "compose": {
+    "include": [
+      {
+        "system": "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+        "concept": [
+          {
+            "code": "FAMRQT"
+          }
+        ]
+      }
+    ]
+  }
+}

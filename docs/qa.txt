@@ -1,0 +1,37 @@
+﻿JohnMoehrkeRelatedPersonConsent : Validation Results
+=========================================
+
+err = 4, warn = 0, info = 0
+IG Publisher Version: 1.1.121
+Generated Fri Jun 17 07:29:59 CDT 2022. FHIR version 4.3.0 for johnmoehrke.relatedpersonconsent.example#0.1.0 (canonical = http://johnmoehrke.github.io/RelatedPersonConsent)
+ Build Errors : 0 / 0 / 0
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\CodeSystem-AuthorizedCodes : 0 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\Consent-ex-consent : 0 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\DocumentReference-ex-documentreference : 0 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\ImplementationGuide-johnmoehrke.relatedpersonconsent.example : 1 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\Organization-ex-organization : 0 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\Patient-ex-patient : 0 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\Practitioner-ex-doctor : 0 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\RelatedPerson-ex-father : 0 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\StructureDefinition-AuthorizedRelatedPerson : 1 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\StructureDefinition-JFM-authorizingConsent : 1 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\StructureDefinition-RelatedPersonConsent : 1 / 0 / 1
+ C:\Users\johnm\Git\RelatedPersonConsent\fsh-generated\resources\ValueSet-AuthPurposesVS : 0 / 0 / 1
+</table>
+== n/a ==
+== fsh-generated\resources\CodeSystem-AuthorizedCodes.json ==
+== fsh-generated\resources\Consent-ex-consent.json ==
+== fsh-generated\resources\DocumentReference-ex-documentreference.json ==
+== fsh-generated\resources\ImplementationGuide-johnmoehrke.relatedpersonconsent.example.json ==
+ERROR: ImplementationGuide/johnmoehrke.relatedpersonconsent.example: ImplementationGuide.fhirVersion[0]: The value provided ('4.3.0') is not in the value set 'FHIRVersion' (http://hl7.org/fhir/ValueSet/FHIR-version|4.3.0-snapshot1), and a code is required from this value set) (error message = Unknown Code http://hl7.org/fhir/FHIR-version#4.3.0 in http://hl7.org/fhir/FHIR-version)
+== fsh-generated\resources\Organization-ex-organization.json ==
+== fsh-generated\resources\Patient-ex-patient.json ==
+== fsh-generated\resources\Practitioner-ex-doctor.json ==
+== fsh-generated\resources\RelatedPerson-ex-father.json ==
+== fsh-generated\resources\StructureDefinition-AuthorizedRelatedPerson.json ==
+ERROR: StructureDefinition/AuthorizedRelatedPerson: StructureDefinition.fhirVersion: The value provided ('4.3.0') is not in the value set 'FHIRVersion' (http://hl7.org/fhir/ValueSet/FHIR-version|4.3.0-snapshot1), and a code is required from this value set) (error message = Unknown Code http://hl7.org/fhir/FHIR-version#4.3.0 in http://hl7.org/fhir/FHIR-version)
+== fsh-generated\resources\StructureDefinition-JFM-authorizingConsent.json ==
+ERROR: StructureDefinition/JFM-authorizingConsent: StructureDefinition.fhirVersion: The value provided ('4.3.0') is not in the value set 'FHIRVersion' (http://hl7.org/fhir/ValueSet/FHIR-version|4.3.0-snapshot1), and a code is required from this value set) (error message = Unknown Code http://hl7.org/fhir/FHIR-version#4.3.0 in http://hl7.org/fhir/FHIR-version)
+== fsh-generated\resources\StructureDefinition-RelatedPersonConsent.json ==
+ERROR: StructureDefinition/RelatedPersonConsent: StructureDefinition.fhirVersion: The value provided ('4.3.0') is not in the value set 'FHIRVersion' (http://hl7.org/fhir/ValueSet/FHIR-version|4.3.0-snapshot1), and a code is required from this value set) (error message = Unknown Code http://hl7.org/fhir/FHIR-version#4.3.0 in http://hl7.org/fhir/FHIR-version)
+== fsh-generated\resources\ValueSet-AuthPurposesVS.json ==
