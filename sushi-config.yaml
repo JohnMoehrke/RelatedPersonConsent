@@ -9,8 +9,8 @@ title: "JohnMoehrke RelatedPerson Consent"
 description: This Implementation Guide addresses RelatePerson representative rational and authorization using a Consent resource.
 status: draft
 version: 0.1.0
-#fhirVersion: 4.3.0
-fhirVersion: 4.3.0-snapshot1
+fhirVersion: 4.3.0
+#fhirVersion: 4.3.0-snapshot1
 #fhirVersion: 4.0.1
 copyrightYear: 2022+
 releaseLabel: ci-build
