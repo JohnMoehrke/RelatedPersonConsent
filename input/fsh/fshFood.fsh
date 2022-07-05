@@ -181,11 +181,20 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
 * organization 1..
 * sourceReference MS
 * sourceReference ^short = "would point at the Consent paperwork signed by the Patient"
+* provision 1..1
 * provision.type = #permit
 * provision.actor 1..
 * provision.actor.reference only Reference(RelatedPerson)
 * provision.actor.role =  http://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATEE
 * provision.purpose from AuthPurposesVS
+* provision.purpose ^short = "may indicate a subset of access purposes of use allowed"
+* provision.action ^short = "may indicate subset of actions allowed"
+* provision.securityLabel ^short = "may indicate a subset of data tags allowed"
+* provision.class ^short = "may indicate a subset of classes of data allowed"
+* provision.dataPeriod ^short = "may indicate a data period allowed"
+* provision.data ^short = "may indicate specific data instances allowed"
+* provision.provision ^short = "may indicate exceptions, specific rules disallowed"
+
 
 
 ValueSet: AuthPurposesVS

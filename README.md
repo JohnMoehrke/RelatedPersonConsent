@@ -6,6 +6,9 @@ formal publication - https://johnmoehrke.github.io/RelatedPersonConsent
 
 ci-build - http://build.fhir.org/ig/JohnMoehrke/RelatedPersonConsent/branches/main/index.html
 
-Note: Building with R4 will produce Errors in the QA. These errors are caused by problems with the Consent specifcation in FHIR core R4. These problems were corrected in the R4B technical-corrections release. So would be best to build with R4B simply to not get the errors. There is no other reliance on R4B, R4 is fine. However at the time of the release R4B was not building proper, gave me three errors indicating that the version 4.3.0 was not valid.
+Current build with R4B produce a validation ERROR that is believed to be a problem with the R4B processing of invariants
+* sdf-24: 'For CodeableReference elements, target profiles must be listed on the CodeableReference, not the CodeableReference.reference' 'For CodeableReference elements, target profiles must be listed on the CodeableReference, not the CodeableReference.reference' (Index 0 out of bounds for length 0)
+* [FHIR chat on consent R4B](https://chat.fhir.org/#narrow/stream/179252-IG-creation/topic/R4B.20consent)
+* [FHIR-37705](https://jira.hl7.org/browse/FHIR-37705)
+* [FHIR-37692](https://jira.hl7.org/browse/FHIR-37692)
 
-...

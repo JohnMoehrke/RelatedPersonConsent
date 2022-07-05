@@ -1,3 +1,20 @@
+<div markdown="1" class="dragon">
+
+This is an experimental IG.
+
+</div>
+
+<div class="note-to-balloters">
+
+Note to balloters
+
+</div>
+
+<div class="stu-note">
+
+STU Note
+
+</div>
 
 This IG focuses on a use-case where the existence of a representative (e.g. guardian) is backed by a rationale and agreement from the Patient. Specifically some cases:
 1. When the Patient is a minor and the representative is a parent.
