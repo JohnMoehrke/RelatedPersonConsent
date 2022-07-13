@@ -30,6 +30,8 @@ extension:
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
     valueInteger: 0
+  - url: http://hl7.org/fhir/StructureDefinition/fmm-definition
+    valueUrl: ./maturity.html
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
   path-resource:
@@ -57,5 +59,8 @@ menu:
 pages:
   index.md:
     title: RelatedPerson Consent
+    generation: markdown
+  maturity:
+    title: Maturity
     generation: markdown
     
