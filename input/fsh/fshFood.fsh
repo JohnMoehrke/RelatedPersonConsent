@@ -87,7 +87,7 @@ Usage: #example
 * name[=].given[+] = "Jingleheimer"
 // after all, that is his name too
 * gender = #male
-//* extension[authorizingConsent].valueReference = Reference(Consent/ex-consent)
+* extension[authorizingConsent].valueReference = Reference(Consent/ex-consent)
 
 
 Instance: ex-consent
