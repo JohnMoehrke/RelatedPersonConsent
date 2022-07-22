@@ -30,8 +30,8 @@ extension:
     valueCode: trial-use
   - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
     valueInteger: 0
-  - url: http://hl7.org/fhir/StructureDefinition/fmm-definition
-    valueUrl: http://example.com/maturity.html
+#  - url: http://hl7.org/fhir/StructureDefinition/fmm-definition
+#    valueUrl: http://example.com/maturity.html
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
   path-resource:
