@@ -12,3 +12,4 @@ Current build with R4B produce a validation ERROR that is believed to be a probl
 * [FHIR-37705](https://jira.hl7.org/browse/FHIR-37705)
 * [FHIR-37692](https://jira.hl7.org/browse/FHIR-37692)
 
+.
