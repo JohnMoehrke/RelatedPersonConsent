@@ -171,17 +171,17 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
 * modifierExtension 0..0
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
-* category ^slicing.discriminator.type = #pattern
+* category ^slicing.discriminator.type = #value
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
-* category 3..3
+* category 3..
 * category contains
    representative 1..1 and
    relInfo 1..1 and
    idscl 1..1
-* category[representative] = AuthorizedCodes#RelatedPersonAuthorizing (exactly)
-* category[relInfo] = http://loinc.org#64292-6 "Release of information consent" (exactly)
-* category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL (exactly)
+* category[representative] = AuthorizedCodes#RelatedPersonAuthorizing
+* category[relInfo] = http://loinc.org#64292-6 "Release of information consent"
+* category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL
 * patient 1..1
 * dateTime 1..1
 * performer 1..
