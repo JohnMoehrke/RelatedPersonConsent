@@ -145,6 +145,7 @@ CodeSystem:  AuthorizedCodes
 Title: "Consent type that is authorizing a RelatedPerson"
 Description:  "CodeSystem for authorizing Consent types for a RelatedPerson"
 * ^caseSensitive = true
+* ^experimental = false
 * #RelatedPersonAuthorizing "Authorizing Consent for a Related Person"
 
 
@@ -170,7 +171,7 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
 * modifierExtension 0..0
 * status = #active
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
-* category ^slicing.discriminator.type = #value
+* category ^slicing.discriminator.type = #pattern
 * category ^slicing.discriminator.path = "$this"
 * category ^slicing.rules = #open
 * category 3..3
@@ -206,4 +207,5 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
 ValueSet: AuthPurposesVS
 Title: "Authorization purposes for delegation access valueset"
 Description: "ValueSet of the Authorized purposesOfUse types"
+* ^experimental = false
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#FAMRQT

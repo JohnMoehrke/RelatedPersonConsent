@@ -55,18 +55,24 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
 menu:
   Home: index.html
   Artifacts: artifacts.html
+  Download: download.html
 
 pages:
   index.md:
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: normative
-    title: RelatedPerson Consent
+    title: "RelatedPerson Consent"
     generation: markdown
-  maturity:
+  maturity.md:
     extension: 
       - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
         valueCode: informative
-    title: Maturity
+    title: "Maturity"
     generation: markdown
-    
+  download.md:
+    extension: 
+      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+        valueCode: informative
+    title: "Downloads and Analysis"
+    generation: markdown
