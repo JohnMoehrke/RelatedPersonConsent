@@ -121,6 +121,21 @@ Title: "Extension that points at an authorizing Consent"
 Description: """
 Used within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist.
 """
+* ^context[+].type = #element
+* ^context[=].expression = "RelatedPerson"
+* value[x] only Reference(Consent)
+* valueReference 1..1
+
+Extension: AuthorizingConsentRetired
+Id: JFM-authorizingConsentRetired
+Title: "Retired Extension that points at an authorizing Consent"
+Description: """
+Retired:
+Used within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist.
+"""
+* ^context[+].type = #element
+* ^context[=].expression = "RelatedPerson"
+* ^status = #retired
 * value[x] only Reference(Consent)
 * valueReference 1..1
 
@@ -146,6 +161,7 @@ Title: "Consent type that is authorizing a RelatedPerson"
 Description:  "CodeSystem for authorizing Consent types for a RelatedPerson"
 * ^caseSensitive = true
 * ^experimental = false
+* ^status = #active
 * #RelatedPersonAuthorizing "Authorizing Consent for a Related Person"
 
 
