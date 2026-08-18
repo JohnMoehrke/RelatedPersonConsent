@@ -1,8 +1,7 @@
 {
-  "version": "0.1.0",
-  "fhirVersion": [
-    "4.3.0"
-  ],
-  "date": "20220617072851",
-  "name": "johnmoehrke.relatedpersonconsent.example"
+  "version" : "0.1.0",
+  "fhirVersion" : ["4.0.1"],
+  "date" : "20260818101900",
+  "name" : "johnmoehrke.relatedpersonconsent.example",
+  "jurisdiction" : "http://unstats.un.org/unsd/methods/m49/m49.htm#001"
 }

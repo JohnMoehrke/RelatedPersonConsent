@@ -1,44 +1,56 @@
-[
-  {
-    "id": "AuthorizedCodes",
-    "type": "CodeSystem",
-    "url": "http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes",
-    "version": "0.1.0",
-    "name": "AuthorizedCodes"
-  },
-  {
-    "id": "johnmoehrke.relatedpersonconsent.example",
-    "type": "ImplementationGuide",
-    "url": "http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example",
-    "version": "0.1.0",
-    "name": "JohnMoehrkeRelatedPersonConsent"
-  },
-  {
-    "id": "AuthorizedRelatedPerson",
-    "type": "StructureDefinition",
-    "url": "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson",
-    "version": "0.1.0",
-    "name": "AuthorizedRelatedPerson"
-  },
-  {
-    "id": "JFM-authorizingConsent",
-    "type": "StructureDefinition",
-    "url": "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsent",
-    "version": "0.1.0",
-    "name": "AuthorizingConsent"
-  },
-  {
-    "id": "RelatedPersonConsent",
-    "type": "StructureDefinition",
-    "url": "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent",
-    "version": "0.1.0",
-    "name": "RelatedPersonConsent"
-  },
-  {
-    "id": "AuthPurposesVS",
-    "type": "ValueSet",
-    "url": "http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS",
-    "version": "0.1.0",
-    "name": "AuthPurposesVS"
-  }
-]
+[{
+  "id" : "AuthorizedCodes",
+  "type" : "CodeSystem",
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes",
+  "version" : "0.1.0",
+  "name" : "AuthorizedCodes",
+  "oids" : ["1.3.6.1.4.1.66281.5.16.1"]
+},
+{
+  "id" : "johnmoehrke.relatedpersonconsent.example",
+  "type" : "ImplementationGuide",
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example",
+  "version" : "0.1.0",
+  "name" : "JohnMoehrkeRelatedPersonConsent",
+  "oids" : ["1.3.6.1.4.1.66281.5"]
+},
+{
+  "id" : "AuthorizedRelatedPerson",
+  "type" : "StructureDefinition",
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson",
+  "version" : "0.1.0",
+  "name" : "AuthorizedRelatedPerson",
+  "oids" : ["1.3.6.1.4.1.66281.5.42.1"]
+},
+{
+  "id" : "JFM-authorizingConsent",
+  "type" : "StructureDefinition",
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsent",
+  "version" : "0.1.0",
+  "name" : "AuthorizingConsent",
+  "oids" : ["1.3.6.1.4.1.66281.5.42.2"]
+},
+{
+  "id" : "JFM-authorizingConsentRetired",
+  "type" : "StructureDefinition",
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsentRetired",
+  "version" : "0.1.0",
+  "name" : "AuthorizingConsentRetired",
+  "oids" : ["1.3.6.1.4.1.66281.5.42.3"]
+},
+{
+  "id" : "RelatedPersonConsent",
+  "type" : "StructureDefinition",
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent",
+  "version" : "0.1.0",
+  "name" : "RelatedPersonConsent",
+  "oids" : ["1.3.6.1.4.1.66281.5.42.4"]
+},
+{
+  "id" : "AuthPurposesVS",
+  "type" : "ValueSet",
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS",
+  "version" : "0.1.0",
+  "name" : "AuthPurposesVS",
+  "oids" : ["1.3.6.1.4.1.66281.5.48.1"]
+}]

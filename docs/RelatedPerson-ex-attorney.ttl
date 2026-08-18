@@ -1,0 +1,66 @@
+@prefix fhir: <http://hl7.org/fhir/> .
+@prefix owl: <http://www.w3.org/2002/07/owl#> .
+@prefix rdfs: <http://www.w3.org/2000/01/rdf-schema#> .
+@prefix xsd: <http://www.w3.org/2001/XMLSchema#> .
+
+# - resource -------------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/RelatedPerson/ex-attorney> a fhir:RelatedPerson ;
+  fhir:nodeRole fhir:treeRoot ;
+  fhir:Resource.id [ fhir:value "ex-attorney"] ;
+  fhir:Resource.meta [
+     fhir:Meta.profile [
+       fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson" ;
+       fhir:index 0 ;
+       fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson>
+     ] ;
+     fhir:Meta.security [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-ActReason" ] ;
+       fhir:Coding.code [ fhir:value "HTEST" ]
+     ]
+  ] ;
+  fhir:DomainResource.text [
+     fhir:Narrative.status [ fhir:value "extensions" ] ;
+     fhir:Narrative.div "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: RelatedPerson ex-attorney</b></p><a name=\"ex-attorney\"> </a><a name=\"hcex-attorney\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Profile: <a href=\"StructureDefinition-AuthorizedRelatedPerson.html\">Authorized RelatedPerson</a></p><p style=\"margin-bottom: 0px\">Security Label: <a href=\"http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html\">test health data (Details: ActReason code HTEST = 'test health data')</a></p></div><p><b>Extension that points at an authorizing Consent</b>: <a href=\"Consent-ex-poa.html\">ex-poa</a></p><p><b>active</b>: true</p><p><b>patient</b>: <a href=\"Patient-ex-elderly.html\">John Schmidt  Other, DoB: 1923-07-25</a></p><p><b>relationship</b>: <span title=\"Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode POWATT}\">power of attorney</span></p><p><b>name</b>: Ralph Luz (Official)</p><p><b>gender</b>: Male</p></div>"
+  ] ;
+  fhir:DomainResource.extension [
+     fhir:index 0 ;
+     fhir:Extension.url [ fhir:value "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsent" ] ;
+     fhir:Extension.valueReference [
+       fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Consent/ex-poa> ;
+       fhir:Reference.reference [ fhir:value "Consent/ex-poa" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.active [ fhir:value "true"^^xsd:boolean] ;
+  fhir:RelatedPerson.patient [
+     fhir:link <http://johnmoehrke.github.io/RelatedPersonConsent/Patient/ex-elderly> ;
+     fhir:Reference.reference [ fhir:value "Patient/ex-elderly" ]
+  ] ;
+  fhir:RelatedPerson.relationship [
+     fhir:index 0 ;
+     fhir:CodeableConcept.coding [
+       fhir:index 0 ;
+       fhir:Coding.system [ fhir:value "http://terminology.hl7.org/CodeSystem/v3-RoleCode" ] ;
+       fhir:Coding.code [ fhir:value "POWATT" ] ;
+       fhir:Coding.display [ fhir:value "power of attorney" ]
+     ]
+  ] ;
+  fhir:RelatedPerson.name [
+     fhir:index 0 ;
+     fhir:HumanName.use [ fhir:value "official" ] ;
+     fhir:HumanName.family [ fhir:value "Luz" ] ;
+     fhir:HumanName.given [
+       fhir:value "Ralph" ;
+       fhir:index 0
+     ]
+  ] ;
+  fhir:RelatedPerson.gender [ fhir:value "male"] .
+
+# - ontology header ------------------------------------------------------------
+
+<http://johnmoehrke.github.io/RelatedPersonConsent/RelatedPerson/ex-attorney.ttl> a owl:Ontology ;
+  owl:imports fhir:fhir.ttl .
+
+# -------------------------------------------------------------------------------------
+

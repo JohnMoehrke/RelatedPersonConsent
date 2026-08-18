@@ -48,7 +48,7 @@ parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+
   apply-jurisdiction: 'true'
   apply-publisher: 'true'
   apply-version: 'true'
-
+  auto-oid-root: 1.3.6.1.4.1.66281.5
 # ╭────────────────────────────────────────────menu.xml────────────────────────────────────────────╮
 # │  To use a provided input/includes/menu.xml file, delete the "menu" property below.             │
 # ╰────────────────────────────────────────────────────────────────────────────────────────────────╯

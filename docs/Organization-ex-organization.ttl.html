@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>JOHNMOEHRKE.RELATEDPERSONCONSENT.EXAMPLE\Example Organization holding the data - TTL Representation - FHIR v4.3.0</title>
+    <title>Example Organization holding the data - TTL Representation - JohnMoehrke RelatedPerson Consent v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -20,7 +20,10 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
-    <!-- Placeholder for child template CSS declarations -->
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="assets/css/moehrke-research.css" rel="stylesheet"/>
+
+
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
@@ -31,21 +34,29 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"2.10"}
-    h3,h4,h5,h6{--heading-prefix:"2.10"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4.12"}
+    h3,h4,h5,h6{--heading-prefix:"4.12"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
+
+        <div id="mr-nav" class="logo">
+          <a id="mr-logo" no-external="true" href="https://johnmoehrke.github.io">
+            <img height="70" alt="Moehrke Research" style="float:left" src="assets/images/logo.png"/>
+          </a>
+        </div>
 
 
         <div id="ig-status">
@@ -77,7 +88,7 @@
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
-            <a class="navbar-brand hidden" href="http://build.fhir.org/index.html">FHIR</a>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <!-- menu.xml  -->
 
@@ -87,6 +98,9 @@
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="download.html">Download</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -108,7 +122,7 @@
 
             <a href="#bottom">bottom</a>
 
-          | <a href="Patient-ex-patient.html">next&gt;</a>
+          | <a href="RelatedPerson-ex-father.html">next&gt;</a>
 
           </span>
 
@@ -123,7 +137,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 9" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">JohnMoehrke RelatedPerson Consent - Local Development build (v0.1.0). See the <a href="http://johnmoehrke.github.io/RelatedPersonConsent/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">JohnMoehrke RelatedPerson Consent - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://johnmoehrke.github.io/RelatedPersonConsent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -138,6 +152,7 @@
   <li>
     <a href="Organization-ex-organization.html">Narrative Content</a>
   </li>
+
 
 
   
@@ -169,18 +184,6 @@
 
 
 <h2 id="root">: Example Organization holding the data - TTL Representation</h2>
-  <table class="colsi">
-    <tr>
-
-      <td colspan="2">
-        
-          
-          
-        
-      </td>
-
-    </tr>
-  </table>
 
 
 <p><a href="Organization-ex-organization.ttl" no-download="true">Raw ttl</a> | <a href="Organization-ex-organization.ttl" download>Download</a></p>
@@ -190,7 +193,7 @@
 
 
 
-  <pre class="rdf"><code class="language-turtle">
+  <pre class="rdf" data-fhir="generated" style="white-space: pre; overflow: hidden"><code class="language-turtle">
 @prefix fhir: &lt;http://hl7.org/fhir/&gt; .
 @prefix owl: &lt;http://www.w3.org/2002/07/owl#&gt; .
 @prefix rdfs: &lt;http://www.w3.org/2000/01/rdf-schema#&gt; .
@@ -198,26 +201,28 @@
 
 # - resource -------------------------------------------------------------------
 
- a fhir:Organization;
-  <a href="http://build.fhir.org/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot;
-  <a href="http://hl7.org/fhir/4.3.0-snapshot1/organization.html#Organization.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#id">fhir:value</a> &quot;ex-organization&quot;];
-  <a href="http://hl7.org/fhir/4.3.0-snapshot1/organization.html#Organization.meta">fhir:Resource.meta</a> [
-     <a href="http://hl7.org/fhir/4.3.0-snapshot1/resource.html#Meta#Meta.security">fhir:Meta.security</a> [
-       <a href="http://build.fhir.org/rdf.html#index">fhir:index</a> 0;
-       <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">fhir:value</a> &quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot; ];
-       <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">fhir:value</a> &quot;HTEST&quot; ]     ]
-  ];
-  <a href="http://hl7.org/fhir/4.3.0-snapshot1/organization.html#Organization.text">fhir:DomainResource.text</a> [
-     <a href="http://hl7.org/fhir/4.3.0-snapshot1/narrative.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">fhir:value</a> &quot;generated&quot; ];
-     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Resource \&quot;ex-organization\&quot; &lt;/p&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Security Labels: &lt;span title=\&quot;{http://terminology.hl7.org/CodeSystem/v3-ActReason http://terminology.hl7.org/CodeSystem/v3-ActReason}\&quot;&gt;http://terminology.hl7.org/CodeSystem/v3-ActReason&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: somewhere org&lt;/p&gt;&lt;/div&gt;&quot;
-  ];
-  <a href="http://hl7.org/fhir/4.3.0-snapshot1/organization.html#Organization.active">fhir:Organization.active</a> [ <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean];
-  <a href="http://hl7.org/fhir/4.3.0-snapshot1/organization.html#Organization.name">fhir:Organization.name</a> [ <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#string">fhir:value</a> &quot;somewhere org&quot;].
+&lt;http://hl7.org/fhir/Organization/ex-organization&gt; a fhir:Organization ;
+  <a href="http://hl7.org/fhir/R4/rdf.html#tree-root">fhir:nodeRole</a> fhir:treeRoot ;
+  <a href="http://hl7.org/fhir/R4/resource.html#Organization.id">fhir:Resource.id</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;ex-organization&quot;] ;
+  <a href="http://hl7.org/fhir/R4/resource.html#Organization.meta">fhir:Resource.meta</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">fhir:Meta.security</a> [
+       <a href="http://hl7.org/fhir/R4/rdf.html#index">fhir:index</a> 0 ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">fhir:Coding.system</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#uri">fhir:value</a> &quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot; ] ;
+       <a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">fhir:Coding.code</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;HTEST&quot; ]
+     ]
+  ] ;
+  <a href="http://hl7.org/fhir/R4/domainresource.html#Organization.text">fhir:DomainResource.text</a> [
+     <a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">fhir:Narrative.status</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#code">fhir:value</a> &quot;generated&quot; ] ;
+     fhir:Narrative.div &quot;&lt;div xmlns=\&quot;http://www.w3.org/1999/xhtml\&quot;&gt;&lt;p class=\&quot;res-header-id\&quot;&gt;&lt;b&gt;Generated Narrative: Organization ex-organization&lt;/b&gt;&lt;/p&gt;&lt;a name=\&quot;ex-organization\&quot;&gt; &lt;/a&gt;&lt;a name=\&quot;hcex-organization\&quot;&gt; &lt;/a&gt;&lt;div style=\&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\&quot;&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;/&gt;&lt;p style=\&quot;margin-bottom: 0px\&quot;&gt;Security Label: &lt;a href=\&quot;http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html\&quot;&gt;test health data (Details: ActReason code HTEST = 'test health data')&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;active&lt;/b&gt;: true&lt;/p&gt;&lt;p&gt;&lt;b&gt;name&lt;/b&gt;: somewhere org&lt;/p&gt;&lt;/div&gt;&quot;
+  ] ;
+  <a href="http://hl7.org/fhir/R4/organization.html#Organization.active">fhir:Organization.active</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#boolean">fhir:value</a> &quot;true&quot;^^xsd:boolean] ;
+  <a href="http://hl7.org/fhir/R4/organization.html#Organization.name">fhir:Organization.name</a> [ <a href="http://hl7.org/fhir/R4/datatypes.html#string">fhir:value</a> &quot;somewhere org&quot;] .
 
 # - ontology header ------------------------------------------------------------
 
- a owl:Ontology;
-  owl:imports fhir:fhir.ttl.
+&lt;http://hl7.org/fhir/Organization/ex-organization.ttl&gt; a owl:Ontology ;
+  owl:imports fhir:fhir.ttl ;
+  owl:versionIRI &lt;http://build.fhir.org/Organization/ex-organization.ttl&gt; .
 
 </code></pre>
 
@@ -237,13 +242,7 @@
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -262,7 +261,7 @@
               </td>
               <td style="text-align:right">&#xA0;
 
-                <a href="Patient-ex-patient.html">next&gt;</a>
+                <a href="RelatedPerson-ex-father.html">next&gt;</a>
 
               </td>
             </tr>
@@ -272,9 +271,9 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package johnmoehrke.relatedpersonconsent.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://build.fhir.org/">FHIR 4.3.0</a>. Generated <span title="Fri, Jun 17, 2022 07:29-0500">2022-06-17</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package johnmoehrke.relatedpersonconsent.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 10:19-0500">2026-08-18</span>
           <br/>
-          <span style="color: var(--footer-highlight-text-color)"></span>
+          <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
                   | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/RelatedPersonConsent/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/RelatedPersonConsent/issues">Issues</a>
@@ -289,7 +288,7 @@
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -299,26 +298,7 @@
   <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
-  
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
-
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   <!-- Analytics Below
   ================================================== -->
   </body>

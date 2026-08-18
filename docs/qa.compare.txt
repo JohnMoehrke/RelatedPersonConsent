@@ -1,0 +1,43 @@
+JohnMoehrkeRelatedPersonConsent : Validation Results
+=========================================
+
+err = 0, warn = 0, info = 0
+$--
+Generated $--. FHIR version $-- for johnmoehrke.relatedpersonconsent.example#$-- (canonical = http://johnmoehrke.github.io/RelatedPersonConsent)
+ Build Errors : 0 / 0 / 0
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\CodeSystem-AuthorizedCodes : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\Consent-ex-consent : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\Consent-ex-poa : 0 / 0 / 2
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\DocumentReference-ex-documentreference : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\DocumentReference-ex-powerOfAttorney : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\ImplementationGuide-johnmoehrke.relatedpersonconsent.example : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\Organization-ex-organization : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\Patient-ex-child : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\Patient-ex-elderly : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\Practitioner-ex-doctor : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\RelatedPerson-ex-attorney : 0 / 0 / 2
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\RelatedPerson-ex-father : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\StructureDefinition-AuthorizedRelatedPerson : 0 / 0 / 2
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\StructureDefinition-JFM-authorizingConsent : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\StructureDefinition-JFM-authorizingConsentRetired : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\StructureDefinition-RelatedPersonConsent : 0 / 0 / 1
+ C:\Users\johnm\git\ME\RelatedPersonConsent\fsh-generated\resources\ValueSet-AuthPurposesVS : 0 / 0 / 1
+</table>
+== n/a ==
+== fsh-generated\resources\CodeSystem-AuthorizedCodes.json ==
+== fsh-generated\resources\Consent-ex-consent.json ==
+== fsh-generated\resources\Consent-ex-poa.json ==
+== fsh-generated\resources\DocumentReference-ex-documentreference.json ==
+== fsh-generated\resources\DocumentReference-ex-powerOfAttorney.json ==
+== fsh-generated\resources\ImplementationGuide-johnmoehrke.relatedpersonconsent.example.json ==
+== fsh-generated\resources\Organization-ex-organization.json ==
+== fsh-generated\resources\Patient-ex-child.json ==
+== fsh-generated\resources\Patient-ex-elderly.json ==
+== fsh-generated\resources\Practitioner-ex-doctor.json ==
+== fsh-generated\resources\RelatedPerson-ex-attorney.json ==
+== fsh-generated\resources\RelatedPerson-ex-father.json ==
+== fsh-generated\resources\StructureDefinition-AuthorizedRelatedPerson.json ==
+== fsh-generated\resources\StructureDefinition-JFM-authorizingConsent.json ==
+== fsh-generated\resources\StructureDefinition-JFM-authorizingConsentRetired.json ==
+== fsh-generated\resources\StructureDefinition-RelatedPersonConsent.json ==
+== fsh-generated\resources\ValueSet-AuthPurposesVS.json ==

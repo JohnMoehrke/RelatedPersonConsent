@@ -1,0 +1,45 @@
+# johnmoehrke.relatedpersonconsent.example#0.1.0: JohnMoehrke RelatedPerson Consent
+
+## Pages
+
+* [RelatedPerson Consent](index.md)
+* [Artifacts Summary](artifacts.md)
+* [Downloads and Analysis](download.md)
+* [Maturity](maturity.md)
+
+## Resources
+
+### CodeSystems
+
+* [Consent type that is authorizing a RelatedPerson](CodeSystem-AuthorizedCodes.md)
+
+### ValueSets
+
+* [Authorization purposes for delegation access valueset](ValueSet-AuthPurposesVS.md)
+
+### Resource Profiles
+
+* [Authorized RelatedPerson](StructureDefinition-AuthorizedRelatedPerson.md)
+* [Consent profile for a RelatedPerson relationship](StructureDefinition-RelatedPersonConsent.md)
+
+### Extensions
+
+* [Extension that points at an authorizing Consent](StructureDefinition-JFM-authorizingConsent.md)
+* [Retired Extension that points at an authorizing Consent](StructureDefinition-JFM-authorizingConsentRetired.md)
+
+### ImplementationGuides
+
+* [JohnMoehrke RelatedPerson Consent](index.md)
+
+### Examples
+
+* [ex-consent (Consent)](Consent-ex-consent.md)
+* [ex-poa (Consent)](Consent-ex-poa.md)
+* [ex-documentreference (DocumentReference)](DocumentReference-ex-documentreference.md)
+* [ex-powerOfAttorney (DocumentReference)](DocumentReference-ex-powerOfAttorney.md)
+* [somewhere org (Organization)](Organization-ex-organization.md)
+* [ex-child (Patient)](Patient-ex-child.md)
+* [ex-elderly (Patient)](Patient-ex-elderly.md)
+* [ex-doctor (Practitioner)](Practitioner-ex-doctor.md)
+* [ex-attorney (RelatedPerson)](RelatedPerson-ex-attorney.md)
+* [ex-father (RelatedPerson)](RelatedPerson-ex-father.md)

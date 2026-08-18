@@ -1,399 +1,1025 @@
 {
-  "resourceType": "ImplementationGuide",
-  "id": "johnmoehrke.relatedpersonconsent.example",
-  "text": {
-    "status": "extensions",
-    "div": "<div xmlns=\"http://www.w3.org/1999/xhtml\"><h2>JohnMoehrkeRelatedPersonConsent</h2><p>The official URL for this implementation guide is: </p><pre>http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example</pre><div><p>This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource.</p>\n</div></div>"
+  "resourceType" : "ImplementationGuide",
+  "id" : "johnmoehrke.relatedpersonconsent.example",
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: ImplementationGuide johnmoehrke.relatedpersonconsent.example</b></p><a name=\"johnmoehrke.relatedpersonconsent.example\"> </a><a name=\"hcjohnmoehrke.relatedpersonconsent.example\"> </a><h2>JohnMoehrkeRelatedPersonConsent</h2><p>The official URL for this implementation guide is: </p><pre>http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example</pre><div><p>This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource.</p>\n</div></div>"
   },
-  "url": "http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example",
-  "version": "0.1.0",
-  "name": "JohnMoehrkeRelatedPersonConsent",
-  "title": "JohnMoehrke RelatedPerson Consent",
-  "status": "draft",
-  "date": "2022-06-17T07:29:17-05:00",
-  "publisher": "John Moehrke (himself)",
-  "contact": [
-    {
-      "name": "John Moehrke (himself)",
-      "telecom": [
-        {
-          "system": "url",
-          "value": "http://healthcaresecprivacy.blogspot.com"
-        },
-        {
-          "system": "email",
-          "value": "JohnMoehrke@gmail.com"
-        }
-      ]
+  "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/ImplementationGuide/johnmoehrke.relatedpersonconsent.example",
+  "version" : "0.1.0",
+  "name" : "JohnMoehrkeRelatedPersonConsent",
+  "title" : "JohnMoehrke RelatedPerson Consent",
+  "status" : "draft",
+  "date" : "2026-08-18T10:19:00-05:00",
+  "publisher" : "John Moehrke (himself)",
+  "contact" : [{
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "url",
+      "value" : "http://healthcaresecprivacy.blogspot.com"
     },
     {
-      "name": "John Moehrke (himself)",
-      "telecom": [
-        {
-          "system": "email",
-          "value": "JohnMoehrke@gmail.com"
-        }
-      ]
-    }
-  ],
-  "description": "This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource.",
-  "jurisdiction": [
-    {
-      "coding": [
-        {
-          "system": "http://unstats.un.org/unsd/methods/m49/m49.htm",
-          "code": "001"
-        }
-      ]
-    }
-  ],
-  "packageId": "johnmoehrke.relatedpersonconsent.example",
-  "license": "CC-BY-4.0",
-  "fhirVersion": [
-    "4.3.0"
-  ],
-  "dependsOn": [
-    {
-      "id": "hl7tx",
-      "uri": "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
-      "packageId": "hl7.terminology.r4",
-      "version": "3.1.0"
-    }
-  ],
-  "definition": {
-    "resource": [
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/AuthorizedRelatedPerson"
-        },
-        "name": "Authorized RelatedPerson",
-        "description": "A RelatedPerson that has been justified and authorized by the Patient.\n\n- The RelatedPerson.patient must be the same as the Consent.patient\n- The Consent.provision.agent.reference must be the same as the RelatedPerson.id\n- The Consent is authorizing (permit) the RelatedPerson, and is not expired.",
-        "exampleBoolean": false
+      "system" : "email",
+      "value" : "JohnMoehrke@gmail.com"
+    }]
+  },
+  {
+    "name" : "John Moehrke (himself)",
+    "telecom" : [{
+      "system" : "email",
+      "value" : "JohnMoehrke@gmail.com"
+    }]
+  }],
+  "description" : "This Implementation Guide addresses RelatedPerson representative rational and authorization using a Consent resource.",
+  "jurisdiction" : [{
+    "coding" : [{
+      "system" : "http://unstats.un.org/unsd/methods/m49/m49.htm",
+      "code" : "001"
+    }]
+  }],
+  "packageId" : "johnmoehrke.relatedpersonconsent.example",
+  "license" : "CC-BY-4.0",
+  "fhirVersion" : ["4.0.1"],
+  "dependsOn" : [{
+    "id" : "hl7tx",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on HL7 Terminology"
+    }],
+    "uri" : "http://terminology.hl7.org/ImplementationGuide/hl7.terminology",
+    "packageId" : "hl7.terminology.r4",
+    "version" : "7.3.0"
+  },
+  {
+    "id" : "hl7ext",
+    "extension" : [{
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment",
+      "valueMarkdown" : "Automatically added as a dependency - all IGs depend on the HL7 Extension Pack"
+    }],
+    "uri" : "http://hl7.org/fhir/extensions/ImplementationGuide/hl7.fhir.uv.extensions",
+    "packageId" : "hl7.fhir.uv.extensions.r4",
+    "version" : "5.3.0"
+  }],
+  "definition" : {
+    "extension" : [{
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "copyrightyear"
       },
       {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:resource"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/RelatedPersonConsent"
-        },
-        "name": "Consent profile for a RelatedPerson relationship",
-        "description": "This defines the constraints on a Consent to indicate that a Patient has agreed and authorizes a Related Person.\n\n- status - would indicate active\n- category - would indicate patient consent specifically a delegation of authority\n- patient - would indicate the Patient resource reference for the given patient\n- dateTime - would indicate when the privacy policy was presented\n- performer - would indicate the Patient resource if the patient was presented, a RelatedPerson for parent or guardian\n- organization - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy\n- source - would point at the specific signed consent by the patient\n- policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy\n- provision.type - permit - given there is no way to deny, this would be fixed at permit.\n- provision.agent.reference - would indicate the RelatedPerson resource\n- provision.agent.role - would indicate this agent is delegated authority\n- provision.purpose - would indicate some set of authorized purposeOfUse",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "StructureDefinition:extension"
-          }
-        ],
-        "reference": {
-          "reference": "StructureDefinition/JFM-authorizingConsent"
-        },
-        "name": "Extension that points at an authorizing Consent",
-        "description": "Used within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist.",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "ValueSet"
-          }
-        ],
-        "reference": {
-          "reference": "ValueSet/AuthPurposesVS"
-        },
-        "name": "Authorization purposes for delegation access valueset",
-        "description": "ValueSet of the Authorized purposesOfUse types",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "CodeSystem"
-          }
-        ],
-        "reference": {
-          "reference": "CodeSystem/AuthorizedCodes"
-        },
-        "name": "Consent type that is authorizing a RelatedPerson",
-        "description": "CodeSystem for authorizing Consent types for a RelatedPerson",
-        "exampleBoolean": false
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Consent"
-          }
-        ],
-        "reference": {
-          "reference": "Consent/ex-consent"
-        },
-        "name": "Simple Consent example",
-        "description": "Consent justifying RelatedPerson and authorizing access by that RelatedPerson",
-        "exampleCanonical": "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Practitioner"
-          }
-        ],
-        "reference": {
-          "reference": "Practitioner/ex-doctor"
-        },
-        "name": "Practitioner example doctor",
-        "description": "Practitioner example for the doctor.",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "DocumentReference"
-          }
-        ],
-        "reference": {
-          "reference": "DocumentReference/ex-documentreference"
-        },
-        "name": "DocumentReference Consent Paperwork example",
-        "description": "DocumentReference example of the paperwork of the Consent",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "RelatedPerson"
-          }
-        ],
-        "reference": {
-          "reference": "RelatedPerson/ex-father"
-        },
-        "name": "Father - Related Person",
-        "description": "Related Father of the Patient authorized by a Consent",
-        "exampleCanonical": "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson"
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Organization"
-          }
-        ],
-        "reference": {
-          "reference": "Organization/ex-organization"
-        },
-        "name": "Example Organization holding the data",
-        "description": "The Organization that holds the data, and enforcing any Consents",
-        "exampleBoolean": true
-      },
-      {
-        "extension": [
-          {
-            "url": "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
-            "valueString": "Patient"
-          }
-        ],
-        "reference": {
-          "reference": "Patient/ex-patient"
-        },
-        "name": "Patient example",
-        "description": "Patient example for completeness sake.",
-        "exampleBoolean": true
-      }
-    ],
-    "page": {
-      "nameUrl": "toc.html",
-      "title": "Table of Contents",
-      "generation": "html",
-      "page": [
-        {
-          "nameUrl": "index.html",
-          "title": "RelatedPerson Consent",
-          "generation": "markdown"
-        }
-      ]
+        "url" : "value",
+        "valueString" : "2022+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
     },
-    "parameter": [
-      {
-        "code": "copyrightyear",
-        "value": "2022+"
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "releaselabel"
       },
       {
-        "code": "releaselabel",
-        "value": "ci-build"
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "show-inherited-invariants"
       },
       {
-        "code": "path-resource",
-        "value": "fsh-generated/resources"
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "usage-stats-opt-out"
       },
       {
-        "code": "show-inherited-invariants",
-        "value": "false"
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "logging"
       },
       {
-        "code": "usage-stats-opt-out",
-        "value": "false"
+        "url" : "value",
+        "valueString" : "progress"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "shownav"
       },
       {
-        "code": "logging",
-        "value": "progress"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "active-tables"
       },
       {
-        "code": "shownav",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-contact"
       },
       {
-        "code": "active-tables",
-        "value": "false"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-jurisdiction"
       },
       {
-        "code": "apply-contact",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-publisher"
       },
       {
-        "code": "apply-jurisdiction",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-version"
       },
       {
-        "code": "apply-publisher",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "auto-oid-root"
       },
       {
-        "code": "apply-version",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "1.3.6.1.4.1.66281.5"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "autoload-resources"
       },
       {
-        "code": "autoload-resources",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
       },
       {
-        "code": "path-resource",
-        "value": "input/capabilities"
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-liquid"
       },
       {
-        "code": "path-resource",
-        "value": "input/examples"
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-qa"
       },
       {
-        "code": "path-resource",
-        "value": "input/extensions"
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-temp"
       },
       {
-        "code": "path-resource",
-        "value": "input/models"
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-output"
       },
       {
-        "code": "path-resource",
-        "value": "input/operations"
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-suppressed-warnings"
       },
       {
-        "code": "path-resource",
-        "value": "input/profiles"
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "path-history"
       },
       {
-        "code": "path-resource",
-        "value": "input/resources"
+        "url" : "value",
+        "valueString" : "http://johnmoehrke.github.io/RelatedPersonConsent/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-html"
       },
       {
-        "code": "path-resource",
-        "value": "input/vocabulary"
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "template-md"
       },
       {
-        "code": "path-resource",
-        "value": "input/testing"
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-context"
       },
       {
-        "code": "path-resource",
-        "value": "input/history"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-copyright"
       },
       {
-        "code": "path-pages",
-        "value": "template/config"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-license"
       },
       {
-        "code": "path-pages",
-        "value": "input/images"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "apply-wg"
       },
       {
-        "code": "path-liquid",
-        "value": "template/liquid"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "fmm-definition"
       },
       {
-        "code": "path-liquid",
-        "value": "input/liquid"
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "propagate-status"
       },
       {
-        "code": "path-qa",
-        "value": "temp/qa"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "excludelogbinaryformat"
       },
       {
-        "code": "path-temp",
-        "value": "temp/pages"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueString" : "tabbed-snapshots"
       },
       {
-        "code": "path-output",
-        "value": "output"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency",
+      "valueCode" : "hl7.fhir.uv.tools.r4#1.1.2"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "copyrightyear"
       },
       {
-        "code": "path-tx-cache",
-        "value": "input-cache/txcache"
+        "url" : "value",
+        "valueString" : "2022+"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "releaselabel"
       },
       {
-        "code": "path-suppressed-warnings",
-        "value": "input/ignoreWarnings.txt"
+        "url" : "value",
+        "valueString" : "ci-build"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "show-inherited-invariants"
       },
       {
-        "code": "path-history",
-        "value": "http://johnmoehrke.github.io/RelatedPersonConsent/history.html"
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "usage-stats-opt-out"
       },
       {
-        "code": "template-html",
-        "value": "template-page.html"
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "logging"
       },
       {
-        "code": "template-md",
-        "value": "template-page-md.html"
+        "url" : "value",
+        "valueString" : "progress"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "shownav"
       },
       {
-        "code": "apply-context",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "active-tables"
       },
       {
-        "code": "apply-copyright",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "false"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-contact"
       },
       {
-        "code": "apply-license",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-jurisdiction"
       },
       {
-        "code": "fmm-definition",
-        "value": "http://hl7.org/fhir/versions.html#maturity"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-publisher"
       },
       {
-        "code": "propagate-status",
-        "value": "true"
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-version"
       },
       {
-        "code": "excludelogbinaryformat",
-        "value": "true"
-      }
-    ]
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "auto-oid-root"
+      },
+      {
+        "url" : "value",
+        "valueString" : "1.3.6.1.4.1.66281.5"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "autoload-resources"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-liquid"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/liquid"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-qa"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/qa"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-temp"
+      },
+      {
+        "url" : "value",
+        "valueString" : "temp/pages"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-output"
+      },
+      {
+        "url" : "value",
+        "valueString" : "output"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-suppressed-warnings"
+      },
+      {
+        "url" : "value",
+        "valueString" : "input/ignoreWarnings.txt"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "path-history"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://johnmoehrke.github.io/RelatedPersonConsent/history.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-html"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "template-md"
+      },
+      {
+        "url" : "value",
+        "valueString" : "template-page-md.html"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-context"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-copyright"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-license"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "apply-wg"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "fmm-definition"
+      },
+      {
+        "url" : "value",
+        "valueString" : "http://hl7.org/fhir/versions.html#maturity"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "propagate-status"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "excludelogbinaryformat"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    },
+    {
+      "extension" : [{
+        "url" : "code",
+        "valueCode" : "tabbed-snapshots"
+      },
+      {
+        "url" : "value",
+        "valueString" : "true"
+      }],
+      "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter"
+    }],
+    "resource" : [{
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "ValueSet"
+      }],
+      "reference" : {
+        "reference" : "ValueSet/AuthPurposesVS"
+      },
+      "name" : "Authorization purposes for delegation access valueset",
+      "description" : "ValueSet of the Authorized purposesOfUse types",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/AuthorizedRelatedPerson"
+      },
+      "name" : "Authorized RelatedPerson",
+      "description" : "A RelatedPerson that has been justified and authorized by the Patient.\n\n- The RelatedPerson.patient must be the same as the Consent.patient\n- The Consent.provision.actor.reference must be the same as the RelatedPerson.id\n- The Consent is authorizing (permit) the RelatedPerson, and is not expired.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/ex-child"
+      },
+      "name" : "Child Patient",
+      "description" : "Child Patient",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/ex-poa"
+      },
+      "name" : "Consent of Elderly giving Power of Attorney",
+      "description" : "Consent justifying RelatedPerson (the attorney) and authorizing power of attorney, and limited access to non-sensitive information.",
+      "exampleCanonical" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:resource"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/RelatedPersonConsent"
+      },
+      "name" : "Consent profile for a RelatedPerson relationship",
+      "description" : "This defines the constraints on a Consent to indicate that a Patient has agreed and authorizes a Related Person.\n\n- status - would indicate active\n- category - would indicate patient consent specifically a delegation of authority\n- patient - would indicate the Patient resource reference for the given patient\n- dateTime - would indicate when the privacy policy was presented\n- performer - would indicate the Patient resource if the patient was presented, a RelatedPerson for parent or guardian\n- organization - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy\n- source - would point at the specific signed consent by the patient\n- policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy\n- provision.type - permit - authorizes the RelatedPerson as a delegatee; nested provisions may deny specific exceptions.\n- provision.actor.reference - would indicate the RelatedPerson resource\n- provision.actor.role - would indicate this actor is delegated authority\n- provision.purpose - would indicate the purpose of the information activity; it does not by itself establish that the RelatedPerson is the clinician or decision-maker for that activity.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "CodeSystem"
+      }],
+      "reference" : {
+        "reference" : "CodeSystem/AuthorizedCodes"
+      },
+      "name" : "Consent type that is authorizing a RelatedPerson",
+      "description" : "CodeSystem for authorizing Consent types for a RelatedPerson",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-documentreference"
+      },
+      "name" : "DocumentReference Consent Paperwork example",
+      "description" : "DocumentReference example of the paperwork of the Consent",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "DocumentReference"
+      }],
+      "reference" : {
+        "reference" : "DocumentReference/ex-powerOfAttorney"
+      },
+      "name" : "DocumentReference Consent Paperwork example",
+      "description" : "The Legal text with legal signature of the Durable Power of Attorney",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Patient"
+      }],
+      "reference" : {
+        "reference" : "Patient/ex-elderly"
+      },
+      "name" : "Elderly Patient example",
+      "description" : "The Elderly Patient.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Organization"
+      }],
+      "reference" : {
+        "reference" : "Organization/ex-organization"
+      },
+      "name" : "Example Organization holding the data",
+      "description" : "The Organization that holds the data, and enforcing any Consents",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/JFM-authorizingConsent"
+      },
+      "name" : "Extension that points at an authorizing Consent",
+      "description" : "Used within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RelatedPerson"
+      }],
+      "reference" : {
+        "reference" : "RelatedPerson/ex-father"
+      },
+      "name" : "Father - Related Person",
+      "description" : "Related Father of the Patient authorized by a Consent",
+      "exampleCanonical" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "RelatedPerson"
+      }],
+      "reference" : {
+        "reference" : "RelatedPerson/ex-attorney"
+      },
+      "name" : "non-family attorney",
+      "description" : "Example to show that an authorized representative might not be family",
+      "exampleCanonical" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/AuthorizedRelatedPerson"
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Practitioner"
+      }],
+      "reference" : {
+        "reference" : "Practitioner/ex-doctor"
+      },
+      "name" : "Practitioner example doctor",
+      "description" : "Practitioner example for the doctor.",
+      "exampleBoolean" : true
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "StructureDefinition:extension"
+      }],
+      "reference" : {
+        "reference" : "StructureDefinition/JFM-authorizingConsentRetired"
+      },
+      "name" : "Retired Extension that points at an authorizing Consent",
+      "description" : "Retired:\nUsed within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist.",
+      "exampleBoolean" : false
+    },
+    {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/resource-information",
+        "valueString" : "Consent"
+      }],
+      "reference" : {
+        "reference" : "Consent/ex-consent"
+      },
+      "name" : "Simple Consent example",
+      "description" : "Consent justifying RelatedPerson and authorizing access by that RelatedPerson",
+      "exampleCanonical" : "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent"
+    }],
+    "page" : {
+      "extension" : [{
+        "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+        "valueUrl" : "toc.html"
+      }],
+      "nameUrl" : "toc.html",
+      "title" : "Table of Contents",
+      "generation" : "html",
+      "page" : [{
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode" : "normative"
+        },
+        {
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "index.html"
+        }],
+        "nameUrl" : "index.html",
+        "title" : "RelatedPerson Consent",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode" : "informative"
+        },
+        {
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "maturity.html"
+        }],
+        "nameUrl" : "maturity.html",
+        "title" : "Maturity",
+        "generation" : "markdown"
+      },
+      {
+        "extension" : [{
+          "url" : "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status",
+          "valueCode" : "informative"
+        },
+        {
+          "url" : "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name",
+          "valueUrl" : "download.html"
+        }],
+        "nameUrl" : "download.html",
+        "title" : "Downloads and Analysis",
+        "generation" : "markdown"
+      }]
+    },
+    "parameter" : [{
+      "code" : "path-resource",
+      "value" : "fsh-generated/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/capabilities"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/examples"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/extensions"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/models"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/operations"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/profiles"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/resources"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/vocabulary"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/testing"
+    },
+    {
+      "code" : "path-resource",
+      "value" : "input/history"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "template/config"
+    },
+    {
+      "code" : "path-pages",
+      "value" : "input/images"
+    },
+    {
+      "code" : "path-tx-cache",
+      "value" : "input-cache/txcache"
+    }]
   }
 }

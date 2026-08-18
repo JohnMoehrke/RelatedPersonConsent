@@ -1,0 +1,27 @@
+Source File	Size	loadResources	load	generateSnapshots	load-configure	scan	loadDepInfo	loadInfo	checkR4R4B	generateNarratives	validate	loadLists	checkConformanceResources	checkConformanceResources2	checkConformanceResources3	generateLogicalMaps	validateExpressions	scanForUsageStats	checkURLsUnique	processProvenanceDetails	generate1	generate2	generateLogicals	makeDependencies	generateExampleZip	generateValidationPack	scanProfilesForR5	scanExamplesForR5
+\fsh-generated\resources\ImplementationGuide-johnmoehrke.relatedpersonconsent.example.json	10228	-	0	0	0	0	0	0	8	45	0	0	0	0	0	0	0	0	0	0	116	73	0	0	0	3	0	1
+fsh-generated/resources/CodeSystem-AuthorizedCodes.json	569	17	0	0	1	0	0	0	0	7	0	0	4	0	0	0	0	0	0	0	21	87	0	0	0	0	0	0
+fsh-generated/resources/Consent-ex-consent.json	2050	0	0	0	0	0	0	0	0	163	0	0	0	0	0	0	0	0	0	0	41	40	0	0	0	0	0	0
+fsh-generated/resources/Consent-ex-poa.json	2740	6	0	0	0	0	0	0	0	21	0	0	0	0	0	0	0	0	0	0	35	28	0	0	0	0	0	0
+fsh-generated/resources/DocumentReference-ex-documentreference.json	1354	0	0	0	0	0	0	0	0	93	0	0	0	0	0	0	0	0	0	0	24	39	0	0	1	0	0	1
+fsh-generated/resources/DocumentReference-ex-powerOfAttorney.json	1873	0	0	0	0	0	0	0	0	3	0	0	0	0	0	0	0	0	0	0	22	29	0	0	0	0	0	0
+fsh-generated/resources/Organization-ex-organization.json	262	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	13	22	0	0	0	0	0	0
+fsh-generated/resources/Patient-ex-child.json	371	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	14	23	0	0	0	0	0	0
+fsh-generated/resources/Patient-ex-elderly.json	961	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	19	22	0	0	0	0	0	0
+fsh-generated/resources/Practitioner-ex-doctor.json	309	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0	0	0	0	0	14	21	0	0	0	0	0	0
+fsh-generated/resources/RelatedPerson-ex-attorney.json	994	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	18	26	0	0	0	0	0	0
+fsh-generated/resources/RelatedPerson-ex-father.json	1024	0	0	0	0	0	0	0	0	2	0	0	0	0	0	0	0	0	0	0	21	23	0	0	0	0	0	0
+fsh-generated/resources/StructureDefinition-AuthorizedRelatedPerson.json	1603	0	0	33	0	0	0	0	1	26	0	0	0	0	0	0	0	0	0	0	103	855	0	0	0	4	0	0
+fsh-generated/resources/StructureDefinition-JFM-authorizingConsent.json	1943	9	0	5	0	0	0	0	0	9	0	0	0	0	0	0	0	0	0	0	89	195	0	0	0	1	0	0
+fsh-generated/resources/StructureDefinition-JFM-authorizingConsentRetired.json	2009	1	0	11	0	0	0	0	0	5	0	0	0	0	0	0	0	0	0	0	75	200	0	0	0	1	0	0
+fsh-generated/resources/StructureDefinition-RelatedPersonConsent.json	7229	2	0	47	0	0	1	0	0	89	0	0	0	0	0	0	0	0	0	0	504	473	0	0	0	5	0	1
+fsh-generated/resources/ValueSet-AuthPurposesVS.json	680	0	0	0	0	0	0	0	0	67	0	0	0	0	0	0	0	0	0	0	27	112	0	0	0	1	0	0
+\fsh-generated\includes\fsh-link-references.md	851	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\fsh-generated\includes\menu.xml	1120	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\input\data\features.yml	280	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\input\pagecontent\download.md	752	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\input\pagecontent\index.md	15799	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\input\pagecontent\maturity.md	25	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+\template\config	0	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0
+\template\config\_config.yml	140	-	-	-	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	0	1	0	0	0	0	0	0
+\temp\pages\_includes\artifacts.xml	10497	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	-	1	0	0	0	0	0	0

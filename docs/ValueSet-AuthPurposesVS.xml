@@ -3,14 +3,19 @@
 <ValueSet xmlns="http://hl7.org/fhir">
   <id value="AuthPurposesVS"/>
   <text>
-    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html"><code>http://terminology.hl7.org/CodeSystem/v3-ActReason</code></a><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActReason.html#v3-ActReason-FAMRQT">FAMRQT</a></td><td>family requested</td><td>To perform one or more operations on information in response to a request by a family member authorized by the patient.</td></tr></table></li></ul></div>
+    <status value="extensions"/><div xmlns="http://www.w3.org/1999/xhtml"><p class="res-header-id"><b>Generated Narrative: ValueSet AuthPurposesVS</b></p><a name="AuthPurposesVS"> </a><a name="hcAuthPurposesVS"> </a><ul><li>Include these codes as defined in <a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html"><code>http://terminology.hl7.org/CodeSystem/v3-ActReason</code></a><span title="Version is not explicitly stated, which means it is fixed to 4.0.0, the version found through the package references"> version &#x1F4E6;4.0.0</span><table class="none"><tr><td style="white-space:nowrap"><b>Code</b></td><td><b>Display</b></td><td><b>Definition</b></td></tr><tr><td><a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-FAMRQT">FAMRQT</a></td><td style="color: #cccccc">family requested</td><td>To perform one or more operations on information in response to a request by a family member authorized by the patient.</td></tr><tr><td><a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-PWATRNY">PWATRNY</a></td><td style="color: #cccccc">power of attorney</td><td>To perform one or more operations on information in response to a request by a person appointed as the patient's legal representative.</td></tr><tr><td><a href="http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-PATADMIN">PATADMIN</a></td><td style="color: #cccccc">patient administration</td><td>To perform one or more operations on information used for operational activities conducted to administer the delivery of health care to a patient.</td></tr></table></li></ul></div>
   </text>
   <url value="http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS"/>
+  <identifier>
+    <system value="urn:ietf:rfc:3986"/>
+    <value value="urn:oid:1.3.6.1.4.1.66281.5.48.1"/>
+  </identifier>
   <version value="0.1.0"/>
   <name value="AuthPurposesVS"/>
   <title value="Authorization purposes for delegation access valueset"/>
-  <status value="active"/>
-  <date value="2022-06-17T07:29:17-05:00"/>
+  <status value="draft"/>
+  <experimental value="false"/>
+  <date value="2026-08-18T10:19:00-05:00"/>
   <publisher value="John Moehrke (himself)"/>
   <contact>
     <name value="John Moehrke (himself)"/>
@@ -42,6 +47,12 @@
       <system value="http://terminology.hl7.org/CodeSystem/v3-ActReason"/>
       <concept>
         <code value="FAMRQT"/>
+      </concept>
+      <concept>
+        <code value="PWATRNY"/>
+      </concept>
+      <concept>
+        <code value="PATADMIN"/>
       </concept>
     </include>
   </compose>

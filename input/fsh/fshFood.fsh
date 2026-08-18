@@ -22,10 +22,10 @@ Usage: #example
 
 
 // history - http://playgroundjungle.com/2018/02/origins-of-john-jacob-jingleheimer-schmidt.html
-Instance:   ex-patient
+Instance:   ex-elderly
 InstanceOf: Patient
-Title:      "Patient example"
-Description: "Patient example for completeness sake."
+Title:      "Elderly Patient example"
+Description: "The Elderly Patient."
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * name[+].use = #usual
@@ -52,7 +52,17 @@ Usage: #example
 * address.state = "WI"
 * address.country = "USA"
 
-
+Instance: ex-child
+InstanceOf: Patient
+Title: "Child Patient"
+Description: "Child Patient"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* name[+].use = #usual
+* name[=].family = "Seebeth"
+* name[=].given = "Bob"
+* gender = #male
+* birthDate = "2014-08-28"
 
 Instance: ex-documentreference
 InstanceOf: DocumentReference
@@ -62,7 +72,7 @@ Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * status = #current
 * type = http://loinc.org#64292-6 "Release of information consent"
-* subject = Reference(Patient/ex-patient)
+* subject = Reference(Patient/ex-child)
 * author = Reference(Organization/ex-organization)
 * description = "The captured signed document"
 * content.attachment.title = "Hello World"
@@ -78,7 +88,7 @@ Description: "Related Father of the Patient authorized by a Consent"
 Usage: #example
 * meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
 * active = true
-* patient = Reference(Patient/ex-patient)
+* patient = Reference(Patient/ex-child)
 * relationship = 	http://terminology.hl7.org/CodeSystem/v3-RoleCode#FTH "father"
 * name[+].use = #official
 * name[=].family = "Schmidt"
@@ -100,10 +110,10 @@ Usage: #example
 * scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
 * category[representative] = AuthorizedCodes#RelatedPersonAuthorizing
 * category[relInfo] = http://loinc.org#64292-6 "Release of information consent"
-* category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL
-* patient = Reference(Patient/ex-patient)
+* category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "information disclosure" // information disclosure consent
+* patient = Reference(Patient/ex-child)
 * dateTime = "2022-06-13"
-* performer = Reference(Patient/ex-patient)
+* performer = Reference(Patient/ex-child)
 * organization = Reference(Organization/ex-organization)
 * sourceReference = Reference(DocumentReference/ex-documentreference)
 * policy.uri = "http://example.org/policies/representative.xacml"
@@ -149,7 +159,7 @@ Description: """
 A RelatedPerson that has been justified and authorized by the Patient.
 
 - The RelatedPerson.patient must be the same as the Consent.patient
-- The Consent.provision.agent.reference must be the same as the RelatedPerson.id
+- The Consent.provision.actor.reference must be the same as the RelatedPerson.id
 - The Consent is authorizing (permit) the RelatedPerson, and is not expired.
 """
 * extension contains AuthorizingConsent named authorizingConsent 0..*
@@ -179,10 +189,10 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
 - organization - would indicate the Organization who presented the privacy policy, and which is going to enforce that privacy policy
 - source - would point at the specific signed consent by the patient
 - policy.uri - would indicate the privacy policy that was presented. Usually, the url to the version specific policy
-- provision.type - permit - given there is no way to deny, this would be fixed at permit.
-- provision.agent.reference - would indicate the RelatedPerson resource
-- provision.agent.role - would indicate this agent is delegated authority
-- provision.purpose - would indicate some set of authorized purposeOfUse
+- provision.type - permit - authorizes the RelatedPerson as a delegatee; nested provisions may deny specific exceptions.
+- provision.actor.reference - would indicate the RelatedPerson resource
+- provision.actor.role - would indicate this actor is delegated authority
+- provision.purpose - would indicate the purpose of the information activity; it does not by itself establish that the RelatedPerson is the clinician or decision-maker for that activity.
 """
 * modifierExtension 0..0
 * status = #active
@@ -196,8 +206,8 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
    relInfo 1..1 and
    idscl 1..1
 * category[representative] = AuthorizedCodes#RelatedPersonAuthorizing
-* category[relInfo] = http://loinc.org#64292-6 "Release of information consent"
-* category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL
+* category[relInfo] = http://loinc.org#64292-6 // "Release of information consent"
+* category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL // "information disclosure" // information disclosure consent
 * patient 1..1
 * dateTime 1..1
 * performer 1..
@@ -205,6 +215,7 @@ This defines the constraints on a Consent to indicate that a Patient has agreed 
 * source[x] only Reference
 * sourceReference ^short = "would point at the Consent paperwork signed by the Patient"
 * provision 1..1
+* provision.type 1..1
 * provision.type = #permit
 * provision.actor 1..
 * provision.actor.reference only Reference(RelatedPerson)
@@ -225,3 +236,68 @@ Title: "Authorization purposes for delegation access valueset"
 Description: "ValueSet of the Authorized purposesOfUse types"
 * ^experimental = false
 * http://terminology.hl7.org/CodeSystem/v3-ActReason#FAMRQT
+* http://terminology.hl7.org/CodeSystem/v3-ActReason#PWATRNY
+* http://terminology.hl7.org/CodeSystem/v3-ActReason#PATADMIN
+
+// second example - Durable Power of Attorney (POA) of an elderly adult authorizing a non-relative legal attorney.
+Instance: ex-powerOfAttorney
+InstanceOf: DocumentReference
+Title: "DocumentReference Consent Paperwork example"
+Description: "The Legal text with legal signature of the Durable Power of Attorney"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #current
+* type = http://loinc.org#64298-3 "Power of attorney"
+* subject = Reference(Patient/ex-elderly)
+* author = Reference(Organization/ex-organization)
+* description = "The captured signed document"
+* content.attachment.title = "Hello World"
+* content.attachment.contentType = #text/plain
+* content.attachment.data = "QXQgdmVybyBlb3MgZXQgYWNjdXNhbXVzIGV0IGl1c3RvIG9kaW8gZGlnbmlzc2ltb3MgZHVjaW11cyBxdWkgYmxhbmRpdGlpcyBwcmFlc2VudGl1bSB2b2x1cHRhdHVtIGRlbGVuaXRpIGF0cXVlIGNvcnJ1cHRpIHF1b3MgZG9sb3JlcyBldCBxdWFzIG1vbGVzdGlhcyBleGNlcHR1cmkgc2ludCBvY2NhZWNhdGkgY3VwaWRpdGF0ZSBub24gcHJvdmlkZW50LCBzaW1pbGlxdWUgc3VudCBpbiBjdWxwYSBxdWkgb2ZmaWNpYSBkZXNlcnVudCBtb2xsaXRpYSBhbmltaSwgaWQgZXN0IGxhYm9ydW0gZXQgZG9sb3J1bSBmdWdhLiBFdCBoYXJ1bSBxdWlkZW0gcmVydW0gZmFjaWxpcyBlc3QgZXQgZXhwZWRpdGEgZGlzdGluY3Rpby4gTmFtIGxpYmVybyB0ZW1wb3JlLCBjdW0gc29sdXRhIG5vYmlzIGVzdCBlbGlnZW5kaSBvcHRpbyBjdW1xdWUgbmloaWwgaW1wZWRpdCBxdW8gbWludXMgaWQgcXVvZCBtYXhpbWUgcGxhY2VhdCBmYWNlcmUgcG9zc2ltdXMsIG9tbmlzIHZvbHVwdGFzIGFzc3VtZW5kYSBlc3QsIG9tbmlzIGRvbG9yIHJlcGVsbGVuZHVzLiBUZW1wb3JpYnVzIGF1dGVtIHF1aWJ1c2RhbSBldCBhdXQgb2ZmaWNpaXMgZGViaXRpcyBhdXQgcmVydW0gbmVjZXNzaXRhdGlidXMgc2FlcGUgZXZlbmlldCB1dCBldCB2b2x1cHRhdGVzIHJlcHVkaWFuZGFlIHNpbnQgZXQgbW9sZXN0aWFlIG5vbiByZWN1c2FuZGFlLiBJdGFxdWUgZWFydW0gcmVydW0gaGljIHRlbmV0dXIgYSBzYXBpZW50ZSBkZWxlY3R1cywgdXQgYXV0IHJlaWNpZW5kaXMgdm9sdXB0YXRpYnVzIG1haW9yZXMgYWxpYXMgY29uc2VxdWF0dXIgYXV0IHBlcmZlcmVuZGlzIGRvbG9yaWJ1cyBhc3BlcmlvcmVzIHJlcGVsbGF0Lg=="
+// At vero eos et accusamus et iusto odio dignissimos ducimus qui blanditiis praesentium voluptatum deleniti atque corrupti quos dolores et quas molestias excepturi sint occaecati cupiditate non provident, similique sunt in culpa qui officia deserunt mollitia animi, id est laborum et dolorum fuga. Et harum quidem rerum facilis est et expedita distinctio. Nam libero tempore, cum soluta nobis est eligendi optio cumque nihil impedit quo minus id quod maxime placeat facere possimus, omnis voluptas assumenda est, omnis dolor repellendus. Temporibus autem quibusdam et aut officiis debitis aut rerum necessitatibus saepe eveniet ut et voluptates repudiandae sint et molestiae non recusandae. Itaque earum rerum hic tenetur a sapiente delectus, ut aut reiciendis voluptatibus maiores alias consequatur aut perferendis doloribus asperiores repellat.
+
+
+Instance: ex-attorney
+InstanceOf: AuthorizedRelatedPerson
+Title: "non-family attorney"
+Description: "Example to show that an authorized representative might not be family"
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* active = true
+* patient = Reference(Patient/ex-elderly)
+* relationship = 	http://terminology.hl7.org/CodeSystem/v3-RoleCode#POWATT "power of attorney"
+* name[+].use = #official
+* name[=].family = "Luz"
+* name[=].given[+] = "Ralph"
+* gender = #male
+* extension[authorizingConsent].valueReference = Reference(Consent/ex-poa)
+
+Instance: ex-poa
+InstanceOf: RelatedPersonConsent
+Title: "Consent of Elderly giving Power of Attorney"
+Description: "Consent justifying RelatedPerson (the attorney) and authorizing power of attorney, and limited access to non-sensitive information."
+Usage: #example
+* meta.security = http://terminology.hl7.org/CodeSystem/v3-ActReason#HTEST
+* status = #active
+* scope = http://terminology.hl7.org/CodeSystem/consentscope#patient-privacy
+* category[representative] = AuthorizedCodes#RelatedPersonAuthorizing
+* category[relInfo] = http://loinc.org#64292-6 "Release of information consent"
+* category[idscl] = http://terminology.hl7.org/CodeSystem/v3-ActCode#IDSCL "information disclosure" // information disclosure consent
+* category[3] = http://loinc.org#64298-3 "Power of attorney"
+* patient = Reference(Patient/ex-elderly)
+* dateTime = "2022-06-13"
+* performer = Reference(Patient/ex-elderly)
+* organization = Reference(Organization/ex-organization)
+* sourceReference = Reference(DocumentReference/ex-powerOfAttorney)
+* policy.uri = "http://example.org/policies/representative.xacml"
+* provision.type = #permit
+* provision.actor.reference = Reference(RelatedPerson/ex-attorney)
+* provision.actor.role = http://terminology.hl7.org/CodeSystem/v3-RoleCode#DELEGATEE
+* provision.purpose = http://terminology.hl7.org/CodeSystem/v3-ActReason#PWATRNY
+// The root permit authorizes the attorney as delegatee and for Power of Attorney; deeper provisions must deny exceptions.
+* provision.provision[+].type = #deny
+* provision.provision[=].securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#R "restricted"
+* provision.provision[+].type = #deny
+* provision.provision[=].securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#V "very restricted"
+// The legal instrument and local policy determine which purposes and labels are actually permitted.
+

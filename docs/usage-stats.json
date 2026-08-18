@@ -1,14 +1,20 @@
 {
   "package": "johnmoehrke.relatedpersonconsent.example",
   "version": "0.1.0",
-  "fhirVersion": "4.3.0",
+  "fhirVersion": "4.0.1",
   "jurisdiction": "001",
   "extensions": [
     {
       "url": "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsent",
       "title": "Extension that points at an authorizing Consent",
       "types": [
-        "Reference",
+        "Reference"
+      ]
+    },
+    {
+      "url": "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsentRetired",
+      "title": "Retired Extension that points at an authorizing Consent",
+      "types": [
         "Reference"
       ]
     }
@@ -37,23 +43,33 @@
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-bindingName": [
       "StructureDefinition.snapshot.element.binding"
     ],
-    "http://hl7.org/fhir/StructureDefinition/elementdefinition-isCommonBinding": [
-      "StructureDefinition.snapshot.element.binding"
-    ],
     "http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet": [
       "StructureDefinition.snapshot.element.binding"
-    ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-explicit-type-name": [
-      "StructureDefinition.snapshot.element"
     ],
     "http://hl7.org/fhir/StructureDefinition/structuredefinition-fhir-type": [
       "StructureDefinition.snapshot.element.type"
     ],
-    "http://hl7.org/fhir/StructureDefinition/structuredefinition-security-category": [
-      "StructureDefinition"
+    "http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status": [
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-internal-dependency": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-page-name": [
+      "ImplementationGuide.definition.page",
+      "ImplementationGuide.definition.page.page"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/ig-parameter": [
+      "ImplementationGuide.definition"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/implementationguide-dependency-comment": [
+      "ImplementationGuide.dependsOn"
     ],
     "http://hl7.org/fhir/tools/StructureDefinition/resource-information": [
       "ImplementationGuide.definition.resource"
+    ],
+    "http://hl7.org/fhir/tools/StructureDefinition/snapshot-base-version": [
+      "StructureDefinition.snapshot"
     ],
     "http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/JFM-authorizingConsent": [
       "RelatedPerson"

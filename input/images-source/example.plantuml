@@ -3,7 +3,7 @@ object "ex-documentreference :\nDocumentReference" as docref [[DocumentReference
 object ": Binary" as doc
 docref --> doc : content.attachment.url
 doc : // Consent signed\nby the patient
-object "ex-patient : Patient" as pat [[Patient-ex-patient.html]]
+object "ex-child : Patient" as pat [[Patient-ex-child.html]]
 pat : name = JJJ Schmidt
 pat : birthDate = 1923-07-25
 object "ex-father: RelatedPerson" as rel [[RelatedPerson-ex-father.html]]

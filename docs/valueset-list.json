@@ -1,0 +1,13 @@
+{
+  "codeSystems" : [{
+    "url" : "http://johnmoehrke.github.io/RelatedPersonConsent/ValueSet/AuthPurposesVS",
+    "version" : "0.1.0",
+    "status" : "draft",
+    "name" : "AuthPurposesVS",
+    "title" : "Authorization purposes for delegation access valueset",
+    "description" : "ValueSet of the Authorized purposesOfUse types",
+    "systems" : ["http://terminology.hl7.org/CodeSystem/v3-ActReason"],
+    "oids" : ["1.3.6.1.4.1.66281.5.48.1"],
+    "sources" : ["1.3.6.1.4.1.66281.5.48.1"]
+  }]
+}

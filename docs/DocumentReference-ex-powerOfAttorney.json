@@ -1,0 +1,36 @@
+{
+  "resourceType" : "DocumentReference",
+  "id" : "ex-powerOfAttorney",
+  "meta" : {
+    "security" : [{
+      "system" : "http://terminology.hl7.org/CodeSystem/v3-ActReason",
+      "code" : "HTEST"
+    }]
+  },
+  "text" : {
+    "status" : "generated",
+    "div" : "<div xmlns=\"http://www.w3.org/1999/xhtml\"><p class=\"res-header-id\"><b>Generated Narrative: DocumentReference ex-powerOfAttorney</b></p><a name=\"ex-powerOfAttorney\"> </a><a name=\"hcex-powerOfAttorney\"> </a><div style=\"display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%\"><p style=\"margin-bottom: 0px\"/><p style=\"margin-bottom: 0px\">Security Label: <a href=\"http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html\">test health data (Details: ActReason code HTEST = 'test health data')</a></p></div><p><b>status</b>: Current</p><p><b>type</b>: <span title=\"Codes:{http://loinc.org 64298-3}\">Power of attorney</span></p><p><b>subject</b>: <a href=\"Patient-ex-elderly.html\">John Schmidt  Other, DoB: 1923-07-25</a></p><p><b>author</b>: <a href=\"Organization-ex-organization.html\">Organization somewhere org</a></p><p><b>description</b>: The captured signed document</p><blockquote><p><b>content</b></p><h3>Attachments</h3><table class=\"grid\"><tr><td style=\"display: none\">-</td><td><b>ContentType</b></td><td><b>Data</b></td><td><b>Title</b></td></tr><tr><td style=\"display: none\">*</td><td>text/plain</td><td><code>QXQgdmVybyBlb3MgZXQgYWNjdXNhbXVz...</code> (base64 data - 1,128 base64 chars)</td><td>Hello World</td></tr></table></blockquote></div>"
+  },
+  "status" : "current",
+  "type" : {
+    "coding" : [{
+      "system" : "http://loinc.org",
+      "code" : "64298-3",
+      "display" : "Power of attorney"
+    }]
+  },
+  "subject" : {
+    "reference" : "Patient/ex-elderly"
+  },
+  "author" : [{
+    "reference" : "Organization/ex-organization"
+  }],
+  "description" : "The captured signed document",
+  "content" : [{
+    "attachment" : {
+      "contentType" : "text/plain",
+      "data" : "QXQgdmVybyBlb3MgZXQgYWNjdXNhbXVzIGV0IGl1c3RvIG9kaW8gZGlnbmlzc2ltb3MgZHVjaW11cyBxdWkgYmxhbmRpdGlpcyBwcmFlc2VudGl1bSB2b2x1cHRhdHVtIGRlbGVuaXRpIGF0cXVlIGNvcnJ1cHRpIHF1b3MgZG9sb3JlcyBldCBxdWFzIG1vbGVzdGlhcyBleGNlcHR1cmkgc2ludCBvY2NhZWNhdGkgY3VwaWRpdGF0ZSBub24gcHJvdmlkZW50LCBzaW1pbGlxdWUgc3VudCBpbiBjdWxwYSBxdWkgb2ZmaWNpYSBkZXNlcnVudCBtb2xsaXRpYSBhbmltaSwgaWQgZXN0IGxhYm9ydW0gZXQgZG9sb3J1bSBmdWdhLiBFdCBoYXJ1bSBxdWlkZW0gcmVydW0gZmFjaWxpcyBlc3QgZXQgZXhwZWRpdGEgZGlzdGluY3Rpby4gTmFtIGxpYmVybyB0ZW1wb3JlLCBjdW0gc29sdXRhIG5vYmlzIGVzdCBlbGlnZW5kaSBvcHRpbyBjdW1xdWUgbmloaWwgaW1wZWRpdCBxdW8gbWludXMgaWQgcXVvZCBtYXhpbWUgcGxhY2VhdCBmYWNlcmUgcG9zc2ltdXMsIG9tbmlzIHZvbHVwdGFzIGFzc3VtZW5kYSBlc3QsIG9tbmlzIGRvbG9yIHJlcGVsbGVuZHVzLiBUZW1wb3JpYnVzIGF1dGVtIHF1aWJ1c2RhbSBldCBhdXQgb2ZmaWNpaXMgZGViaXRpcyBhdXQgcmVydW0gbmVjZXNzaXRhdGlidXMgc2FlcGUgZXZlbmlldCB1dCBldCB2b2x1cHRhdGVzIHJlcHVkaWFuZGFlIHNpbnQgZXQgbW9sZXN0aWFlIG5vbiByZWN1c2FuZGFlLiBJdGFxdWUgZWFydW0gcmVydW0gaGljIHRlbmV0dXIgYSBzYXBpZW50ZSBkZWxlY3R1cywgdXQgYXV0IHJlaWNpZW5kaXMgdm9sdXB0YXRpYnVzIG1haW9yZXMgYWxpYXMgY29uc2VxdWF0dXIgYXV0IHBlcmZlcmVuZGlzIGRvbG9yaWJ1cyBhc3BlcmlvcmVzIHJlcGVsbGF0Lg==",
+      "title" : "Hello World"
+    }
+  }]
+}

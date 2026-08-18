@@ -3,3 +3,9 @@
 # Add warning and/or information messages here after you've confirmed that they aren't really a problem
 # (And include comments like this justifying why)
 # See https://github.com/FHIR/sample-ig/blob/master/input/ignoreWarnings.txt for examples
+
+# understood
+WARNING: ImplementationGuide: The assigned auto-oid-root value '1.3.6.1.4.1.66281.5' is not registered in https://github.com/FHIR/ig-registry/blob/master/oid-assignments.json so isn't known to be valid
+INFORMATION: StructureDefinition/AuthorizedRelatedPerson: StructureDefinition.snapshot.element[4].binding.extension[0]: The extension http://hl7.org/fhir/StructureDefinition/elementdefinition-maxValueSet|5.3.0 is deprecated with the note: 'Use additionalBinding extension or element instead'
+INFORMATION: Consent/ex-poa: Consent.category[3]: This element does not match any known slice defined in the profile http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent|0.1.0 (this may not be a problem, but you should check that it's not intended to match a slice)
+INFORMATION: RelatedPerson/ex-attorney: RelatedPerson.relationship[0]: None of the codings provided are in the value set 'Patient relationship type' (http://hl7.org/fhir/ValueSet/relatedperson-relationshiptype|4.0.1), and a coding is recommended to come from this value set (codes = http://terminology.hl7.org/CodeSystem/v3-RoleCode#POWATT)

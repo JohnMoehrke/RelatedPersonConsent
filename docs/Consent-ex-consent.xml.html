@@ -5,7 +5,7 @@
 <html xml:lang="en" xmlns="http://www.w3.org/1999/xhtml" lang="en">
   <head>
     <meta content="text/html;charset=utf-8" http-equiv="Content-Type"/>
-    <title>JOHNMOEHRKE.RELATEDPERSONCONSENT.EXAMPLE\Simple Consent example - XML Representation - FHIR v4.3.0</title>
+    <title>Simple Consent example - XML Representation - JohnMoehrke RelatedPerson Consent v0.1.0</title>
 
     <meta name="viewport" content="width=device-width, initial-scale=1.0"/>
     <meta name="author" content="http://hl7.org/fhir"/>
@@ -20,7 +20,10 @@
     <link href="assets/css/pygments-manni.css" rel="stylesheet"/>
     <link href="assets/css/jquery-ui.css" rel="stylesheet"/>
   	<link href="assets/css/prism.css" rel="stylesheet" />
-    <!-- Placeholder for child template CSS declarations -->
+  	<link href="assets/css/cqf.css" rel="stylesheet" />
+    <link href="assets/css/moehrke-research.css" rel="stylesheet"/>
+
+
 
     <script type="text/javascript" src="fhir-table-scripts.js"> </script>
 
@@ -31,21 +34,29 @@
     <![endif]-->
 
     <!-- Favicons -->
-    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/apple-touch-icon-144-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/apple-touch-icon-114-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/apple-touch-icon-72-precomposed.png"/>
-    <link rel="apple-touch-icon-precomposed" href="assets/ico/apple-touch-icon-57-precomposed.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="144x144" href="assets/ico/icon-fhir-144.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="114x114" href="assets/ico/icon-fhir-114.png"/>
+    <link rel="apple-touch-icon-precomposed" sizes="72x72" href="assets/ico/icon-fhir-72.png"/>
+    <link rel="apple-touch-icon-precomposed" href="assets/ico/icon-fhir-57.png"/>
     <link rel="shortcut icon" href="assets/ico/favicon.png"/>
   </head>
   <body onload="document.body.style.opacity='1'">
 
 	  <script src="assets/js/prism.js"></script>
-
-    <style type="text/css">h2{--heading-prefix:"2.6"}
-    h3,h4,h5,h6{--heading-prefix:"2.6"}</style>
+    <script type="text/javascript" src="assets/js/mermaid.js"></script>
+    <script type="text/javascript" src="assets/js/mermaid-init.js"></script>
+    <style type="text/css">h2{--heading-prefix:"4.16"}
+    h3,h4,h5,h6{--heading-prefix:"4.16"}</style>
     <div id="segment-header" class="segment">  <!-- segment-header -->
       <div class="container">  <!-- container -->
+
         <!-- Placeholder for child template header declarations -->
+
+        <div id="mr-nav" class="logo">
+          <a id="mr-logo" no-external="true" href="https://johnmoehrke.github.io">
+            <img height="70" alt="Moehrke Research" style="float:left" src="assets/images/logo.png"/>
+          </a>
+        </div>
 
 
         <div id="ig-status">
@@ -77,7 +88,7 @@
               <span class="icon-bar"> </span>
               <span class="icon-bar"> </span>
             </button>
-            <a class="navbar-brand hidden" href="http://build.fhir.org/index.html">FHIR</a>
+            <a class="navbar-brand hidden" href="http://hl7.org/fhir/R4/index.html">FHIR</a>
             <div class="nav-collapse collapse navbar-inverse-collapse">
               <!-- menu.xml  -->
 
@@ -87,6 +98,9 @@
   </li>
   <li>
     <a href="artifacts.html">Artifacts</a>
+  </li>
+  <li>
+    <a href="download.html">Download</a>
   </li>
 </ul>
             </div>  <!-- /.nav-collapse -->
@@ -123,7 +137,7 @@
           <div class="inner-wrapper">
 
 <div style="counter-reset: section 7" class="col-12">
-<!--ReleaseHeader--><p id="publish-box">JohnMoehrke RelatedPerson Consent - Local Development build (v0.1.0). See the <a href="http://johnmoehrke.github.io/RelatedPersonConsent/history.html">Directory of published versions</a></p><!--EndReleaseHeader-->
+<!--ReleaseHeader--><p id="publish-box">JohnMoehrke RelatedPerson Consent - Local Development build (v0.1.0) built by the FHIR (HL7® FHIR® Standard) Build Tools. See the <a href='http://johnmoehrke.github.io/RelatedPersonConsent/history.html'>Directory of published versions</a></p><!--EndReleaseHeader-->
 
 
 
@@ -138,6 +152,7 @@
   <li>
     <a href="Consent-ex-consent.html">Narrative Content</a>
   </li>
+
 
 
   
@@ -169,18 +184,6 @@
 
 
 <h2 id="root">: Simple Consent example - XML Representation</h2>
-  <table class="">
-    <tr>
-
-      <td colspan="2">
-        
-          
-          
-        
-      </td>
-
-    </tr>
-  </table>
 
 
 <p><a href="Consent-ex-consent.xml" no-download="true">Raw xml</a> | <a href="Consent-ex-consent.xml" download>Download</a></p>
@@ -190,84 +193,86 @@
 
 
 
-  <pre class="xml"><code class="language-xml">
-
-&lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent">Consent</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.id">id</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#id">value</a>=&quot;ex-consent&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.meta">meta</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/resource.html#Meta#Meta.profile">profile</a>
-             <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#canonical">value</a>=&quot;http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/resource.html#Meta#Meta.security">security</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;HTEST&quot;/&gt;
-    &lt;/security&gt;
-  &lt;/meta&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.text">text</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/narrative.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
-    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p&gt;&lt;b&gt;Generated Narrative&lt;/b&gt;&lt;/p&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Resource &quot;ex-consent&quot; &lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-RelatedPersonConsent.html&quot;&gt;Consent profile for a RelatedPerson relationship&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Security Labels: &lt;span title=&quot;{http://terminology.hl7.org/CodeSystem/v3-ActReason http://terminology.hl7.org/CodeSystem/v3-ActReason}&quot;&gt;http://terminology.hl7.org/CodeSystem/v3-ActReason&lt;/span&gt;&lt;/p&gt;&lt;/div&gt;&lt;p&gt;&lt;b&gt;status&lt;/b&gt;: active&lt;/p&gt;&lt;p&gt;&lt;b&gt;scope&lt;/b&gt;: Privacy Consent &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;http://hl7.org/fhir/4.3.0-snapshot1/codesystem-consent-scope.html&quot;&gt;Consent Scope Codes&lt;/a&gt;#patient-privacy)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;category&lt;/b&gt;: Authorizing Consent for a Related Person &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;CodeSystem-AuthorizedCodes.html&quot;&gt;Consent type that is authorizing a RelatedPerson&lt;/a&gt;#RelatedPersonAuthorizing)&lt;/span&gt;, Release of information consent &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;https://loinc.org/&quot;&gt;LOINC&lt;/a&gt;#64292-6)&lt;/span&gt;, information disclosure &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;http://terminology.hl7.org/3.1.0/CodeSystem-v3-ActCode.html&quot;&gt;ActCode&lt;/a&gt;#IDSCL)&lt;/span&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;patient&lt;/b&gt;: &lt;a href=&quot;Patient-ex-patient.html&quot;&gt;Patient/ex-patient&lt;/a&gt; &quot; SCHMIDT&quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;dateTime&lt;/b&gt;: 2022-06-13&lt;/p&gt;&lt;p&gt;&lt;b&gt;performer&lt;/b&gt;: &lt;a href=&quot;Patient-ex-patient.html&quot;&gt;Patient/ex-patient&lt;/a&gt; &quot; SCHMIDT&quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;organization&lt;/b&gt;: &lt;a href=&quot;Organization-ex-organization.html&quot;&gt;Organization/ex-organization&lt;/a&gt; &quot;somewhere org&quot;&lt;/p&gt;&lt;p&gt;&lt;b&gt;source&lt;/b&gt;: &lt;a href=&quot;DocumentReference-ex-documentreference.html&quot;&gt;DocumentReference/ex-documentreference&lt;/a&gt;&lt;/p&gt;&lt;h3&gt;Policies&lt;/h3&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Uri&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;http://example.org/policies/representative.xacml&quot;&gt;http://example.org/policies/representative.xacml&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;blockquote&gt;&lt;p&gt;&lt;b&gt;provision&lt;/b&gt;&lt;/p&gt;&lt;p&gt;&lt;b&gt;type&lt;/b&gt;: permit&lt;/p&gt;&lt;h3&gt;Actors&lt;/h3&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;-&lt;/td&gt;&lt;td&gt;&lt;b&gt;Role&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Reference&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td&gt;*&lt;/td&gt;&lt;td&gt;delegatee &lt;span style=&quot;background: LightGoldenRodYellow; margin: 4px; border: 1px solid khaki&quot;&gt; (&lt;a href=&quot;http://terminology.hl7.org/3.1.0/CodeSystem-v3-RoleCode.html&quot;&gt;RoleCode&lt;/a&gt;#DELEGATEE)&lt;/span&gt;&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;RelatedPerson-ex-father.html&quot;&gt;RelatedPerson/ex-father&lt;/a&gt; &quot; SCHMIDT&quot;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;&lt;b&gt;purpose&lt;/b&gt;: family requested (Details: http://terminology.hl7.org/CodeSystem/v3-ActReason code FAMRQT = 'family requested', stated as 'null')&lt;/p&gt;&lt;/blockquote&gt;&lt;/div&gt;<a name="end-xhtml"></a>
-  &lt;/text&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.status">status</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.scope">scope</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/consentscope&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;patient-privacy&quot;/&gt;
-    &lt;/coding&gt;
-  &lt;/scope&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.category">category</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">system</a>
-              <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;RelatedPersonAuthorizing&quot;/&gt;
-    &lt;/coding&gt;
-  &lt;/category&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.category">category</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;64292-6&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#string">value</a>=&quot;Release of information consent&quot;/&gt;
-    &lt;/coding&gt;
-  &lt;/category&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.category">category</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActCode&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;IDSCL&quot;/&gt;
-    &lt;/coding&gt;
-  &lt;/category&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.patient">patient</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#string">value</a>=&quot;Patient/ex-patient&quot;/&gt;
-  &lt;/patient&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.dateTime">dateTime</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#dateTime">value</a>=&quot;2022-06-13&quot;/&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.performer">performer</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#string">value</a>=&quot;Patient/ex-patient&quot;/&gt;
-  &lt;/performer&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.organization">organization</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#string">value</a>=&quot;Organization/ex-organization&quot;/&gt;
-  &lt;/organization&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.source[x]">sourceReference</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#string">value</a>=&quot;DocumentReference/ex-documentreference&quot;/&gt;
-  &lt;/sourceReference&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.policy">policy</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.policy.uri">uri</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://example.org/policies/representative.xacml&quot;/&gt;
-  &lt;/policy&gt;
-  &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.provision">provision</a>&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.provision.type">type</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;permit&quot;/&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.provision.actor">actor</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.provision.actor.role">role</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
-          &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-RoleCode&quot;/&gt;
-          &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;DELEGATEE&quot;/&gt;
-        &lt;/coding&gt;
-      &lt;/role&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.provision.actor.reference">reference</a>&gt;
-        &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#string">value</a>=&quot;RelatedPerson/ex-father&quot;/&gt;
-      &lt;/reference&gt;
-    &lt;/actor&gt;
-    &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/consent.html#Consent.provision.purpose">purpose</a>&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot;/&gt;
-      &lt;<a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/4.3.0-snapshot1/datatypes.html#code">value</a>=&quot;FAMRQT&quot;/&gt;
-    &lt;/purpose&gt;
-  &lt;/provision&gt;
-&lt;/Consent&gt;</code></pre>
+  <pre class="xml" data-fhir="generated" style="white-space: pre; text-wrap: nowrap; width: auto;"><code class="language-xml" style="white-space: pre; text-wrap: nowrap;">
+&lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent">Consent</a> xmlns=&quot;http://hl7.org/fhir&quot;&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Consent.id">id</a> <a href="http://hl7.org/fhir/R4/datatypes.html#id">value</a>=&quot;ex-consent&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/resource.html#Consent.meta">meta</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.profile">profile</a>
+             <a href="http://hl7.org/fhir/R4/datatypes.html#canonical">value</a>=&quot;http://johnmoehrke.github.io/RelatedPersonConsent/StructureDefinition/RelatedPersonConsent&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;HTEST&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#Meta#Meta.security">security</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/resource.html#Consent.meta">meta</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/domainresource.html#Consent.text">text</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Narrative#Narrative.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;generated&quot;/&gt;
+    &lt;div xmlns=&quot;http://www.w3.org/1999/xhtml&quot;&gt;&lt;p class=&quot;res-header-id&quot;&gt;&lt;b&gt;Generated Narrative: Consent ex-consent&lt;/b&gt;&lt;/p&gt;&lt;a name=&quot;ex-consent&quot;&gt; &lt;/a&gt;&lt;a name=&quot;hcex-consent&quot;&gt; &lt;/a&gt;&lt;div style=&quot;display: inline-block; background-color: #d9e0e7; padding: 6px; margin: 4px; border: 1px solid #8da1b4; border-radius: 5px; line-height: 60%&quot;&gt;&lt;p style=&quot;margin-bottom: 0px&quot;/&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Profile: &lt;a href=&quot;StructureDefinition-RelatedPersonConsent.html&quot;&gt;Consent profile for a RelatedPerson relationship&lt;/a&gt;&lt;/p&gt;&lt;p style=&quot;margin-bottom: 0px&quot;&gt;Security Label: &lt;a href=&quot;http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html&quot;&gt;test health data (Details: ActReason code HTEST = 'test health data')&lt;/a&gt;&lt;/p&gt;&lt;/div&gt;&lt;h2&gt;Participants&lt;/h2&gt;&lt;table class=&quot;grid&quot;&gt;&lt;tr&gt;&lt;td&gt;&lt;b&gt;Role&lt;/b&gt;&lt;/td&gt;&lt;td&gt;&lt;b&gt;Details&lt;/b&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td title=&quot;Who the consent applies to&quot;&gt;Patient&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;Patient-ex-child.html&quot;&gt;Bob Seebeth  Male, DoB: 2014-08-28&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td title=&quot;Who is agreeing to the policy and rules&quot;&gt;Party&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;Patient-ex-child.html&quot;&gt;Bob Seebeth  Male, DoB: 2014-08-28&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;tr&gt;&lt;td title=&quot;Who manages the consent through its lifecycle.&quot;&gt;Manager&lt;/td&gt;&lt;td&gt;&lt;a href=&quot;Organization-ex-organization.html&quot;&gt;Organization somewhere org&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;p&gt;This consent is made under the policy &lt;a href=&quot;http://example.org/policies/representative.xacml&quot;&gt;http://example.org/policies/representative.xacml&lt;/a&gt; .&lt;/p&gt;&lt;table border=&quot;1&quot; cellpadding=&quot;0&quot; cellspacing=&quot;0&quot; style=&quot;border: 1px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top;&quot;&gt;&lt;tr style=&quot;border: 2px #F0F0F0 solid; font-size: 11px; font-family: verdana; vertical-align: top&quot;&gt;&lt;th style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;https://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Applicable Rule&quot;&gt;Rule&lt;/a&gt;&lt;/th&gt;&lt;th style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;https://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Applicable Parties&quot;&gt;Who&lt;/a&gt;&lt;/th&gt;&lt;th style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; padding-top: 3px; padding-bottom: 3px&quot; class=&quot;hierarchy&quot;&gt;&lt;a href=&quot;https://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Applicable Data&quot;&gt;What&lt;/a&gt;&lt;span style=&quot;float: right&quot;&gt;&lt;a href=&quot;https://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Legend for this format&quot;&gt;&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC&quot; alt=&quot;doco&quot; style=&quot;background-color: inherit&quot;/&gt;&lt;/a&gt;&lt;/span&gt;&lt;/th&gt;&lt;/tr&gt;&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: white&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck1.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon_extension.png&quot; alt=&quot;.&quot; style=&quot;background-color: white; background-color: inherit&quot; title=&quot;Consent Provision&quot; class=&quot;hierarchy&quot;/&gt; permit&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: white; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr style=&quot;border: 1px #F0F0F0 solid; padding:0px; vertical-align: top; background-color: #F7F7F7&quot;&gt;&lt;td style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px; white-space: nowrap; background-image: url(tbl_bck00.png)&quot; class=&quot;hierarchy&quot;&gt;&lt;img src=&quot;tbl_spacer.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;tbl_vjoin_end.png&quot; alt=&quot;.&quot; style=&quot;background-color: inherit&quot; class=&quot;hierarchy&quot;/&gt;&lt;img src=&quot;icon_extension.png&quot; alt=&quot;.&quot; style=&quot;background-color: #F7F7F7; background-color: inherit&quot; title=&quot;Consent Provision&quot; class=&quot;hierarchy&quot;/&gt; permit&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;ul&gt;&lt;li&gt;&lt;span title=&quot;Codes:{http://terminology.hl7.org/CodeSystem/v3-RoleCode DELEGATEE}&quot;&gt;delegatee&lt;/span&gt;: &lt;a href=&quot;RelatedPerson-ex-father.html&quot;&gt;RelatedPerson John Jacob Jingleheimer Schmidt (official)&lt;/a&gt;&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;td style=&quot;vertical-align: top; text-align : var(--ig-left,left); background-color: #F7F7F7; border: 1px #F0F0F0 solid; padding:0px 4px 0px 4px&quot; class=&quot;hierarchy&quot;&gt;&lt;ul&gt;&lt;li&gt;Purpose: &lt;a href=&quot;http://terminology.hl7.org/7.3.0/CodeSystem-v3-ActReason.html#v3-ActReason-FAMRQT&quot;&gt;ActReason: FAMRQT&lt;/a&gt; (family requested)&lt;/li&gt;&lt;/ul&gt;&lt;/td&gt;&lt;/tr&gt;
+&lt;tr&gt;&lt;td colspan=&quot;3&quot; class=&quot;hierarchy&quot;&gt;&lt;br/&gt;&lt;a href=&quot;https://hl7.org/fhir/R4/formats.html#table&quot; title=&quot;Legend for this format&quot;&gt;&lt;img src=&quot;data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAABAAAAAQCAYAAAAf8/9hAAAABmJLR0QA/wD/AP+gvaeTAAAACXBIWXMAAAsTAAALEwEAmpwYAAAAB3RJTUUH3goXBCwdPqAP0wAAAldJREFUOMuNk0tIlFEYhp9z/vE2jHkhxXA0zJCMitrUQlq4lnSltEqCFhFG2MJFhIvIFpkEWaTQqjaWZRkp0g26URZkTpbaaOJkDqk10szoODP//7XIMUe0elcfnPd9zsfLOYplGrpRwZaqTtw3K7PtGem7Q6FoidbGgqHVy/HRb669R+56zx7eRV1L31JGxYbBtjKK93cxeqfyQHbehkZbUkK20goELEuIzEd+dHS+qz/Y8PTSif0FnGkbiwcAjHaU1+QWOptFiyCLp/LnKptpqIuXHx6rbR26kJcBX3yLgBfnd7CxwJmflpP2wUg0HIAoUUpZBmKzELGWcN8nAr6Gpu7tLU/CkwAaoKTWRSQyt89Q8w6J+oVQkKnBoblH7V0PPvUOvDYXfopE/SJmALsxnVm6LbkotrUtNowMeIrVrBcBpaMmdS0j9df7abpSuy7HWehwJdt1lhVwi/J58U5beXGAF6c3UXLycw1wdFklArBn87xdh0ZsZtArghBdAA3+OEDVubG4UEzP6x1FOWneHh2VDAHBAt80IbdXDcesNoCvs3E5AFyNSU5nbrDPZpcUEQQTFZiEVx+51fxMhhyJEAgvlriadIJZZksRuwBYMOPBbO3hePVVqgEJhFeUuFLhIPkRP6BQLIBrmMenujm/3g4zc398awIe90Zb5A1vREALqneMcYgP/xVQWlG+Ncu5vgwwlaUNx+3799rfe96u9K0JSDXcOzOTJg4B6IgmXfsygc7/Bvg9g9E58/cDVmGIBOP/zT8Bz1zqWqpbXIsd0O9hajXfL6u4BaOS6SeWAAAAAElFTkSuQmCC&quot; alt=&quot;doco&quot; style=&quot;background-color: inherit&quot;/&gt; Documentation for this format&lt;/a&gt;&lt;/td&gt;&lt;/tr&gt;&lt;/table&gt;&lt;/div&gt;<a name="end-xhtml"></a>
+  &lt;/<a href="http://hl7.org/fhir/R4/domainresource.html#Consent.text">text</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.status">status</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;active&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.scope">scope</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/consentscope&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;patient-privacy&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.scope">scope</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.category">category</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a>
+              <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://johnmoehrke.github.io/RelatedPersonConsent/CodeSystem/AuthorizedCodes&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;RelatedPersonAuthorizing&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.category">category</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.category">category</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://loinc.org&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;64292-6&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Release of information consent&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.category">category</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.category">category</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActCode&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;IDSCL&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.display">display</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;information disclosure&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.category">category</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.patient">patient</a>&gt;<a href="Patient-ex-child.html" style="color: Maroon">&#x1F517;</a> 
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/ex-child&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.patient">patient</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.dateTime">dateTime</a> <a href="http://hl7.org/fhir/R4/datatypes.html#dateTime">value</a>=&quot;2022-06-13&quot;/&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.performer">performer</a>&gt;<a href="Patient-ex-child.html" style="color: Maroon">&#x1F517;</a> 
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Patient/ex-child&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.performer">performer</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.organization">organization</a>&gt;<a href="Organization-ex-organization.html" style="color: Maroon">&#x1F517;</a> 
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;Organization/ex-organization&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.organization">organization</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.source_x_">sourceReference</a>&gt;<a href="DocumentReference-ex-documentreference.html" style="color: Maroon">&#x1F517;</a> 
+    &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;DocumentReference/ex-documentreference&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.source_x_">sourceReference</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.policy">policy</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.policy.uri">uri</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://example.org/policies/representative.xacml&quot;/&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.policy">policy</a>&gt;
+  &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision">provision</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.type">type</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;permit&quot;/&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor">actor</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor.role">role</a>&gt;
+        &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-RoleCode&quot;/&gt;
+          &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;DELEGATEE&quot;/&gt;
+        &lt;/<a href="http://hl7.org/fhir/R4/datatypes.html#CodeableConcept#CodeableConcept.coding">coding</a>&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor.role">role</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor.reference">reference</a>&gt;<a href="RelatedPerson-ex-father.html" style="color: Maroon">&#x1F517;</a> 
+        &lt;<a href="http://hl7.org/fhir/R4/references.html#Reference#Reference.reference">reference</a> <a href="http://hl7.org/fhir/R4/datatypes.html#string">value</a>=&quot;RelatedPerson/ex-father&quot;/&gt;
+      &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor.reference">reference</a>&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.actor">actor</a>&gt;
+    &lt;<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.purpose">purpose</a>&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.system">system</a> <a href="http://hl7.org/fhir/R4/datatypes.html#uri">value</a>=&quot;http://terminology.hl7.org/CodeSystem/v3-ActReason&quot;/&gt;
+      &lt;<a href="http://hl7.org/fhir/R4/datatypes.html#Coding#Coding.code">code</a> <a href="http://hl7.org/fhir/R4/datatypes.html#code">value</a>=&quot;FAMRQT&quot;/&gt;
+    &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision.purpose">purpose</a>&gt;
+  &lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent.provision">provision</a>&gt;
+&lt;/<a href="http://hl7.org/fhir/R4/consent.html#Consent">Consent</a>&gt;</code></pre>
 
 
   <!-- insert notes if present -->
@@ -284,13 +289,7 @@
   <script type="text/javascript" src="assets/js/jquery.js"> </script>     <!-- note keep space here, otherwise it will be transformed to empty tag -> fails -->
   <script type="text/javascript" src="assets/js/jquery-ui.min.js"> </script>
 
-  <script type="text/javascript">
-    $(document).ready(function(){
-      if(window.location.hash != "") {
-          $('a[href="' + window.location.hash + '"]').click()
-      }
-    });
-  </script>
+  <script type="text/javascript" src="assets/js/window-hash.js"> </script>
   <a name="bottom"> </a>
   <div id="segment-footer" igtool="footer" class="segment">  <!-- segment-footer -->
     <div class="container">  <!-- container -->
@@ -319,9 +318,9 @@
 
       <div class="inner-wrapper">
         <p>
-          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package johnmoehrke.relatedpersonconsent.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://build.fhir.org/">FHIR 4.3.0</a>. Generated <span title="Fri, Jun 17, 2022 07:29-0500">2022-06-17</span>
+          IG &#169; 2022+ <a style="color:var(--footer-hyperlink-text-color)" href="http://healthcaresecprivacy.blogspot.com">John Moehrke (himself)</a>.  Package johnmoehrke.relatedpersonconsent.example#0.1.0 based on <a style="color: var(--footer-hyperlink-text-color)" href="http://hl7.org/fhir/R4/">FHIR 4.0.1</a>. Generated <span title="Tue, Aug 18, 2026 10:19-0500">2026-08-18</span>
           <br/>
-          <span style="color: var(--footer-highlight-text-color)"></span>
+          <span style="color: var(--footer-highlight-text-color)">
                       Links: <a style="color: var(--footer-hyperlink-text-color)" href="toc.html">Table of Contents</a> |
                  <a style="color: var(--footer-hyperlink-text-color)" href="qa.html">QA Report</a>
                   | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/RelatedPersonConsent/issues/new/choose">New Issue</a> | <a style="color: var(--footer-hyperlink-text-color)" target="_blank" href="https://github.com/JohnMoehrke/RelatedPersonConsent/issues">Issues</a>
@@ -336,7 +335,7 @@
     <div class="container">  <!-- container -->
     </div>  <!-- /container -->
   </div>  <!-- /segment-post-footer -->
-  
+
   <!-- JS and analytics only. -->
   <!-- Bootstrap core JavaScript
   ================================================== -->
@@ -346,26 +345,7 @@
   <script type="text/javascript" src="assets/js/anchor.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard.min.js"> </script>
   <script type="text/javascript" src="assets/js/clipboard-btn.js"> </script>
-  <script>anchors.options.visible = 'hover'
-anchors.add()</script>
-  
-<!-- feedback form - Google forms -->
-<!-- v0.1, 2021-01-09 -->
-
-
-  
-    
-  
-
-
-  
-    
-  
-
-
-
-<!-- / feedback form  -->
-
+  <script type="text/javascript" src="assets/js/anchor-hover.js"> </script>
   <!-- Analytics Below
   ================================================== -->
   </body>
