@@ -9,6 +9,13 @@ CI build: http://build.fhir.org/ig/JohnMoehrke/RelatedPersonConsent/branches/mai
 
 Source repository: https://github.com/JohnMoehrke/RelatedPersonConsent
 
+## Related Consent Implementation Guides
+
+- [Consent about AI use](https://github.com/JohnMoehrke/ConsentAboutAI)
+- [Emancipation using Consent](https://github.com/JohnMoehrke/emancipation)
+- [Consent with Segmentation](https://github.com/JohnMoehrke/ConsentWithSegmentation)
+- [Consent with XACML encoded rules](https://github.com/JohnMoehrke/xacml-consent)
+
 ## Blog Article
 
 ### Using FHIR Consent to Explain and Authorize a RelatedPerson
@@ -44,11 +51,23 @@ provision. The service does not need to treat a relationship such as `father` or
 
 The source of the decision matters. A signed authorization, court appointment,
 or other legal instrument may contain details that should not be reduced to a
-single FHIR code. The Consent can point to that evidence through
-`sourceReference`, typically a `DocumentReference` with a `Binary` when the
-document content must be retained. The Consent is the organization's actionable
-interpretation of that evidence; it is not a replacement for the evidence or a
+single FHIR code. When the evidence can be exchanged and the organization is
+authorized to publish it, the Consent can point to it through `sourceReference`,
+typically a `DocumentReference` with a `Binary` when the document content must be
+retained. That source reference is recommended, but it may not be available or
+publishable in every setting. The Consent is the organization's actionable
+interpretation of the evidence; it is not a replacement for the evidence or a
 universal statement of legal authority.
+
+The broad representative purpose does not by itself define every activity the
+representative may perform. `PWATRNY` identifies a request by a legal
+representative; it does not distinguish reviewing records from authorizing
+treatment, selecting a facility, approving a transfer, or consenting to research
+enrollment. `PATADMIN` and `CLINTRCH`, where applicable, describe contexts for
+information operations, not the representative's authority to make the
+underlying decision. Fine-grained activities require governed action or purpose
+codes, or well-defined extensions, before they can be represented as independent
+permit or deny provisions.
 
 There is an important implementation tradeoff around discoverability. The guide
 defines an `authorizingConsent` extension on `RelatedPerson`, which lets a client
@@ -73,6 +92,8 @@ and authorizing Consent together:
 - [Patient](https://johnmoehrke.github.io/RelatedPersonConsent/Patient-ex-patient.html)
 - [Father as RelatedPerson](https://johnmoehrke.github.io/RelatedPersonConsent/RelatedPerson-ex-father.html)
 - [Consent authorizing the RelatedPerson](https://johnmoehrke.github.io/RelatedPersonConsent/Consent-ex-consent.html)
+- [Attorney as RelatedPerson](https://johnmoehrke.github.io/RelatedPersonConsent/RelatedPerson-ex-attorney.html)
+- [Consent authorizing Power of Attorney](https://johnmoehrke.github.io/RelatedPersonConsent/Consent-ex-poa.html)
 
 The formal publication is the stable reference for this work; the CI build shows
 the current development state.
