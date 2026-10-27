@@ -25,13 +25,13 @@ contact:
         value: JohnMoehrke@gmail.com
 license: CC-BY-4.0
 jurisdiction: 'http://unstats.un.org/unsd/methods/m49/m49.htm#001'
-#extension: 
-#  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
-#    valueCode: trial-use
-#  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
-#    valueInteger: 0
-#  - url: http://hl7.org/fhir/StructureDefinition/fmm-definition
-#    valueUrl: http://example.com/maturity.html
+extension: 
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-standards-status
+    valueCode: trial-use
+  - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+    valueInteger: 1
+  - url: http://hl7.org/fhir/StructureDefinition/fmm-definition
+    valueUrl: http://example.com/maturity.html
 
 parameters:  # see https://confluence.hl7.org/display/FHIR/Implementation+Guide+Parameters
   path-resource:
@@ -76,3 +76,13 @@ pages:
         valueCode: informative
     title: "Downloads and Analysis"
     generation: markdown
+
+# Note that applying FMM to an artifact using the resources: section does not work. It does propigate the FMM into the IG.json, but since it is not in the actual artifact it does not end up in the artifact in the publication or rendering of that artifact.
+# resources:
+#  StructureDefinition/JFM-authorizingConsent:
+#    name: "JFM Authorizing Consent"
+#    description: "JFM Authorizing Consent Structure Definition"
+#   extension: 
+#      - url: http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm
+#        valueInteger: 1
+

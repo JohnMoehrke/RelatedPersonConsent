@@ -135,6 +135,7 @@ Used within a Resource to indicate that the activity enabled by the Resource is 
 * ^context[=].expression = "RelatedPerson"
 * value[x] only Reference(Consent)
 * valueReference 1..1
+* ^extension[http://hl7.org/fhir/StructureDefinition/structuredefinition-fmm].valueInteger = 0
 
 Extension: AuthorizingConsentRetired
 Id: JFM-authorizingConsentRetired
@@ -142,6 +143,8 @@ Title: "Retired Extension that points at an authorizing Consent"
 Description: """
 Retired:
 Used within a Resource to indicate that the activity enabled by the Resource is authorized by the Consent indicated. For example: Used within a RelatedParty to indicate the Consent the Patient has given authorizing the RelatedParty relationship to exist.
+
+Experimenting with extensions marked as status retired
 """
 * ^context[+].type = #element
 * ^context[=].expression = "RelatedPerson"
@@ -300,4 +303,3 @@ Usage: #example
 * provision.provision[+].type = #deny
 * provision.provision[=].securityLabel[+] = http://terminology.hl7.org/CodeSystem/v3-Confidentiality#V "very restricted"
 // The legal instrument and local policy determine which purposes and labels are actually permitted.
-
